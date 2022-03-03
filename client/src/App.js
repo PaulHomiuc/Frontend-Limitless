@@ -8,7 +8,8 @@ import Login from "./Login/Login.js";
 const App = () => {
   return (
     <div className="wrapper">
-      <h1>Application</h1>
+
+      <Login/>
       <BrowserRouter>
         <Routes>
           <Route path="/dashboard" element={<Dashboard />} />
