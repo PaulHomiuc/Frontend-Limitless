@@ -5,7 +5,35 @@
     background-image: url("/public/birou.jpg");
     background-size:cover;
     background-repeat : no-repeat;
-    height: 100vh;
+    height: 100vh; 
+}
+input{
+  border-radius: 25px;
+  background: #e0f3c5;
+  padding: 10px;
+  width: 200px;
+  height: 10px;
 
- 
+}
+button {
+  display: inline-block;
+  padding: 10px 10px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #000000;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
