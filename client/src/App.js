@@ -7,7 +7,7 @@ import Login from "./Login/Login.js";
 
 const App = () => {
   return (
-    <div className="wrapper">
+    <div className="bg">
 
       <Login/>
       <BrowserRouter>
