@@ -1,0 +1,39 @@
+
+
+.Dashboard{
+
+    background-color: rgb(38, 136, 228);
+    width: 400px;
+    height: 1080px;
+    margin: -10px;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Fredoka';
+  
+}
+.Information{
+      
+    height: 50px;
+    margin-top: 20%;
+    margin-right: 80%;
+    display: inline-block;
+    transform: translate3d(-100px,0,0);
+    padding: 1rem 1rem;
+    vertical-align: middle;
+
+}
+.buttonMenu{
+
+  position:absolute;
+  margin-right: 45%;
+  margin-top:8%;
+  display: inline-block;
+
+  width: 150px;
+  padding: 1rem 1rem;
+ 
+  
+  vertical-align: middle;
+
+}

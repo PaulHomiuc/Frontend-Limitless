@@ -1,11 +1,18 @@
 import React, {Component} from "react";
 import "./Login.css";
 import { useState } from "react";
+import { Navigate, useRoutes } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password,setPassword]=useState("");
   const [message, setMessage] = useState("");
+  
+const navigate=useNavigate();  
+const redirect = () =>{
+navigate("/employee");
 
+}
   const emailValidation = () => {
     const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g;
     if (regEx.test(email)) {
@@ -28,7 +35,7 @@ export default function Login() {
    
     <div className="Login">
       <h1>Please Log In</h1>
-      <form>
+      <form className="formular">
         <label>
           <p>E-mail address</p>
           <input  id="email"
@@ -36,16 +43,16 @@ export default function Login() {
           type="email"
           placeholder="email"
           value={email}
-          required
+          required  onInput={emailValidation}
           onChange={handleOnChange} />
         </label>
         <label>
           <p>Password</p>
           <input id="password" type="password"  
-           placeholder="password"  required    onChange={handleOnChange}  isPassword/>
+           placeholder="password"  required    isPassword/>
         </label>
         <div>
-          <button type="submit" onClick={emailValidation}>Submit</button>
+          <button type="submit" onClick={redirect} >Submit</button>
         </div>
       </form>
     </div>

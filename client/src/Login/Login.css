@@ -1,6 +1,7 @@
 .login-wrapper {
   display: flex;
   flex-direction: column;
+  margin: -10px;
   align-items: center;
   font-family: 'Fredoka', cursive;
   background-image: url("/public/birou.jpg");
@@ -21,9 +22,11 @@ background-repeat: no-repeat;
   flex-direction: column;
   align-items: center;
   font-family: 'Fredoka', cursive;
+  margin: -8px;
   background-image: url("/public/birou.jpg");
   /* Full height */
 min-width: 100%;
+overflow: auto;
 min-height: 100%;
 position: fixed;
 
@@ -32,7 +35,12 @@ background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
 }
-
+.formular{
+  background-color: rgba(246, 249, 252,50%);
+  padding: 50px;
+  border-radius:30px;
+  
+}
 input{
   border-radius: 25px;
   background: #e0f3c5;
@@ -42,7 +50,7 @@ input{
 
 }
 h1{
-  background-color: rgba(255, 236, 236, 0.3);
+  background-color: rgba(255, 236, 236, 40%);
   color: rgb(7, 8, 63);
   background-blend-mode: lighten;
   backface-visibility: hidden;
@@ -77,3 +85,5 @@ button:active {
   box-shadow: 0 5px rgb(102, 102, 102);
   transform: translateY(4px);
 }
+input:hover{background-color: #bbb8b8;}
+input:active{background-color: #bbb8b8;}
