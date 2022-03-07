@@ -7,6 +7,12 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const [fname, setFname] = useState("");
+  const [lname, setLname] = useState("");
+  const [role, setRole] = useState("");
+  const [gender, setGender] = useState("");
+  const [date, setDate] = useState("");
+  const [national, setNational] = useState("");
 
   const navigate = useNavigate();
   const redirect = () => {
@@ -23,22 +29,27 @@ export default function Register() {
     }
     if (password.length < 8) setMessage("The password should have at least 8 characters");
   };
-  /*async function registerUser() {
-    fetch("http://localhost:4000/register");
-   headers:{
-     'Content-Type': "application/json";
-   } 
-    body: JSON.stringify{
-      fname,
-      lname,
-      email,
-      password,
-      role,
-      gender,
-      date,
-      nationality
-    }
-  }*/
+  async function registerUser(event) {
+    event.preventDefault();
+    const response = await fetch("http://localhost:4000/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        fname,
+        lname,
+        email,
+        password,
+        role,
+        gender,
+        date,
+        national,
+      }),
+    });
+    const data = await response.json();
+    console.log(data);
+  }
   const handleOnChange = (e) => {
     setEmail(e.target.value);
   };
@@ -51,13 +62,27 @@ export default function Register() {
             First Name<b>*</b>
           </p>
 
-          <input id="fname" type="text" placeholder="First Name" required />
+          <input
+            value={fname}
+            id="fname"
+            type="text"
+            placeholder="First Name"
+            required
+            onChange={(e) => setFname(e.target.value)}
+          />
         </label>
         <label>
           <p>
             Last Name<b>*</b>
           </p>
-          <input id="lname" type="text" placeholder="Last Name" required />
+          <input
+            value={lname}
+            id="lname"
+            type="text"
+            placeholder="Last Name"
+            required
+            onChange={(e) => setLname(e.target.value)}
+          />
         </label>
         <label>
           <p>
@@ -79,13 +104,27 @@ export default function Register() {
           <p>
             Password<b>*</b>
           </p>
-          <input id="password" type="password" placeholder="password" required isPassword />
+          <input
+            id="password"
+            type="password"
+            placeholder="password"
+            required
+            isPassword
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </label>
         <label>
           <p>
             Role<b>*</b>
           </p>
-          <select name="role" id="roles" required placeholder="Role">
+          <select
+            name="role"
+            id="roles"
+            required
+            placeholder="Role"
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
+          >
             <option value="admin">Administrator</option>
             <option value="officeadmin">Office Administrator</option>
             <option value="employee">Employee</option>
@@ -95,7 +134,14 @@ export default function Register() {
           <p>
             Gender<b>*</b>
           </p>
-          <select name="gender" id="genders" required placeholder="Gender">
+          <select
+            name="gender"
+            id="genders"
+            required
+            placeholder="Gender"
+            value={gender}
+            onChange={(e) => setGender(e.target.value)}
+          >
             <option value="Male">Male</option>
             <option value="Female">Female</option>
             <option value="Other">Other</option>
@@ -104,15 +150,28 @@ export default function Register() {
 
         <label>
           <p>Date of birth</p>
-          <input type="date" name="date" id="date" />
+          <input
+            type="date"
+            name="date"
+            id="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+          />
         </label>
         <label>
           <p>Nationality</p>
-          <input type="text" placeholder="Nationality" id="nationality" name="nationality" />
+          <input
+            type="text"
+            placeholder="Nationality"
+            id="nationality"
+            name="nationality"
+            value={national}
+            onChange={(e) => setNational(e.target.value)}
+          />
         </label>
 
         <div>
-          <button type="submit" onClick={redirect}>
+          <button type="submit" onClick={registerUser}>
             Submit
           </button>
         </div>
