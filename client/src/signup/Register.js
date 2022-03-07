@@ -23,15 +23,28 @@ export default function Register() {
     }
     if (password.length < 8) setMessage("The password should have at least 8 characters");
   };
-  async function registerUser() {
+  /*async function registerUser() {
     fetch("http://localhost:4000/register");
-  }
+   headers:{
+     'Content-Type': "application/json";
+   } 
+    body: JSON.stringify{
+      fname,
+      lname,
+      email,
+      password,
+      role,
+      gender,
+      date,
+      nationality
+    }
+  }*/
   const handleOnChange = (e) => {
     setEmail(e.target.value);
   };
   return (
     <div className="Register">
-      <h1>Register a new user</h1>
+      <h1 className="headereg">Register a new user</h1>
       <form className="formular">
         <label>
           <p>
@@ -91,11 +104,11 @@ export default function Register() {
 
         <label>
           <p>Date of birth</p>
-          <input type="date" />
+          <input type="date" name="date" id="date" />
         </label>
         <label>
           <p>Nationality</p>
-          <input type="text" placeholder="Nationality" />
+          <input type="text" placeholder="Nationality" id="nationality" name="nationality" />
         </label>
 
         <div>

@@ -3,62 +3,57 @@
   flex-direction: column;
   margin: -10px;
   align-items: center;
-  font-family: 'Fredoka', cursive;
+  font-family: "Fredoka", cursive;
   background-image: url("/public/birou.jpg");
   /* Full height */
 
+  /* Center and scale the image nicely */
 
-/* Center and scale the image nicely */
-
-background-repeat: no-repeat;
-
-
-
+  background-repeat: no-repeat;
 }
 
-.Login{
+.Login {
   /* The image used */
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'Fredoka', cursive;
+  font-family: "Fredoka", cursive;
   margin: -8px;
   background-image: url("/public/birou.jpg");
   /* Full height */
-min-width: 100%;
-overflow: auto;
-min-height: 100%;
-position: fixed;
+  min-width: 100%;
+  overflow: auto;
+  min-height: 100%;
+  position: fixed;
 
-/* Center and scale the image nicely */
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.formular{
-  background-color: rgba(246, 249, 252,50%);
+.formular {
+  background-color: rgba(246, 249, 252, 50%);
   padding: 50px;
-  border-radius:30px;
-  
+  border-radius: 30px;
+  margin-top: 50px;
 }
-input{
+input {
   border-radius: 25px;
   background: #e0f3c5;
   padding: 10px;
   width: 200px;
   height: 10px;
-
 }
-h1{
+.headerlogin {
   background-color: rgba(255, 236, 236, 40%);
   color: rgb(7, 8, 63);
   background-blend-mode: lighten;
   backface-visibility: hidden;
-  padding: 10px;
-  width: 200px;
+  padding: 8px;
+  align-items: center;
+  width: 194px;
   border-radius: 25px;
-  height: 40px;
-
+  height: 84px;
 }
 
 button {
@@ -74,16 +69,22 @@ button {
   color: rgb(2, 0, 0);
   background-color: #f8e7e7;
   border: none;
-  font-family: 'Fredoka', cursive;
+  font-family: "Fredoka", cursive;
   border-radius: 15px;
   box-shadow: 0 3px #999;
 }
-button:hover {background-color: #bbb8b8}
+button:hover {
+  background-color: #bbb8b8;
+}
 
 button:active {
   background-color: #d3dbd3;
   box-shadow: 0 5px rgb(102, 102, 102);
   transform: translateY(4px);
 }
-input:hover{background-color: #bbb8b8;}
-input:active{background-color: #bbb8b8;}
+input:hover {
+  background-color: #bbb8b8;
+}
+input:active {
+  background-color: #bbb8b8;
+}
