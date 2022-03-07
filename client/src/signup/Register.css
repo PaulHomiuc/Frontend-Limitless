@@ -8,7 +8,7 @@
   /* Full height */
 
   /* Center and scale the image nicely */
-
+  overflow: auto;
   background-repeat: no-repeat;
 }
 
@@ -22,9 +22,10 @@
   background-image: url("/public/birou.jpg");
   /* Full height */
   min-width: 100%;
-  overflow: auto;
+  height: 1000px;
   min-height: 100%;
-  position: fixed;
+  /* position: fixed; */
+  overflow: auto;
 
   /* Center and scale the image nicely */
   background-position: center;

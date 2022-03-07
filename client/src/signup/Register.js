@@ -23,7 +23,9 @@ export default function Register() {
     }
     if (password.length < 8) setMessage("The password should have at least 8 characters");
   };
-
+  async function registerUser() {
+    fetch("http://localhost:4000/register");
+  }
   const handleOnChange = (e) => {
     setEmail(e.target.value);
   };
