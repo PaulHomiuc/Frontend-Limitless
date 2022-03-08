@@ -121,7 +121,7 @@ export default function Register() {
             name="role"
             id="roles"
             required
-            placeholder="Role"
+            placeholder="admin"
             value={role}
             onChange={(e) => setRole(e.target.value)}
           >
@@ -138,7 +138,7 @@ export default function Register() {
             name="gender"
             id="genders"
             required
-            placeholder="Gender"
+            placeholder="Male"
             value={gender}
             onChange={(e) => setGender(e.target.value)}
           >

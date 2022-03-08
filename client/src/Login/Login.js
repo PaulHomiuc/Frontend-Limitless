@@ -43,7 +43,6 @@ export default function Login() {
     setEmail(e.target.value);
   };
   return (
-    
     <div className="Login">
       <div className="headerlogin">
         <h1>Please Log In</h1>
@@ -64,7 +63,14 @@ export default function Login() {
         </label>
         <label>
           <p>Password</p>
-          <input id="password" type="password" placeholder="password" required isPassword />
+          <input
+            id="password"
+            type="password"
+            placeholder="password"
+            required
+            isPassword
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </label>
         <div>
           <button type="submit" onClick={loginUser}>

@@ -6,6 +6,7 @@ import Preferences from "./preferences/Preferences.js";
 import Login from "./Login/Login.js";
 import Employee from "./employee/Employee";
 import Register from "./signup/Register";
+import Administrator from "./admin/Administrator";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Route path="/" element={<Navigate replace to="/login" />} />
 
           <Route path="/employee" element={<Employee />} />
+          <Route path="/admin" element={<Administrator />} />
           <Route path="/preferences" element={<Preferences />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
