@@ -12,6 +12,21 @@ export default function Login() {
   const redirect = () => {
     navigate("/employee");
   };
+  async function loginUser(event) {
+    event.preventDefault();
+    const response = await fetch("http://localhost:4000/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    });
+    const data = await response.json();
+    console.log(data);
+  }
   const emailValidation = () => {
     const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g;
     if (regEx.test(email)) {
@@ -52,7 +67,7 @@ export default function Login() {
           <input id="password" type="password" placeholder="password" required isPassword />
         </label>
         <div>
-          <button type="submit" onClick={redirect}>
+          <button type="submit" onClick={loginUser}>
             Submit
           </button>
         </div>
