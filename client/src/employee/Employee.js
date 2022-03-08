@@ -7,16 +7,14 @@ export default function Employee() {
    
         <div className="Dashboard">
           <label>You are logged in as Employee</label>
-           <div>
-           <img className="Information" src="/Information.png"></img>
-          <button className="buttonMenu">Account information</button>
-         
+          <div className="elemnt1">
+           <img  className ="Information" src="/Information.png" ></img>
+           <button className="buttonMenu" >Account information</button>
            </div>
-           <span>
-           <img className="Information" src="writePage.png"></img>
-          <button className="buttonMenu">Desk request</button>
-       
-           </span>
-           </div>
+           <div className="element2">
+           <img className ="Information" src="writePage.png" ></img>
+          <button className="buttonMenu" >Desk request</button>
+          </div>
+        </div>
       )
 }
