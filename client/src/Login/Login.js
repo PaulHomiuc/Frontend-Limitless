@@ -14,7 +14,7 @@ export default function Login() {
   };
   async function loginUser(event) {
     event.preventDefault();
-    const response = await fetch("http://localhost:4000/login", {
+    const response = await fetch("http://localhost:4000/api/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -25,6 +25,16 @@ export default function Login() {
       }),
     });
     const data = await response.json();
+
+    if (data.user) {
+      localStorage.setItem("token", data.user);
+      alert("Connected");
+
+      navigate("/admin");
+    } else {
+      document.getElementById("email").style.backgroundColor = "pink";
+      document.getElementById("password").style.backgroundColor = "pink";
+    }
     console.log(data);
   }
   const emailValidation = () => {
@@ -40,7 +50,12 @@ export default function Login() {
   };
 
   const handleOnChange = (e) => {
+    document.getElementById("email").style.backgroundColor = "#e0f3c5";
     setEmail(e.target.value);
+  };
+  const handleOnChangepass = (e) => {
+    document.getElementById("password").style.backgroundColor = "#e0f3c5";
+    setPassword(e.target.value);
   };
   return (
     <div className="Login">
@@ -69,7 +84,7 @@ export default function Login() {
             placeholder="password"
             required
             isPassword
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={handleOnChangepass}
           />
         </label>
         <div>

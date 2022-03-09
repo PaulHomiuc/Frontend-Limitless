@@ -31,7 +31,7 @@ export default function Register() {
   };
   async function registerUser(event) {
     event.preventDefault();
-    const response = await fetch("http://localhost:4000/register", {
+    const response = await fetch("http://localhost:4000/api/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -49,6 +49,7 @@ export default function Register() {
     });
     const data = await response.json();
     console.log(data);
+    if (data.status === "ok") navigate("/login");
   }
   const handleOnChange = (e) => {
     setEmail(e.target.value);
