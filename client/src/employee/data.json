@@ -1,0 +1,23 @@
+[
+    {
+      "Office address": {
+        "Str universitatii":1
+        ,"Marasesti":2 
+      },
+      "Office Surface":{
+        "30mp":1,
+        "50mp":2
+
+
+      },
+      "Number of available desks: ": {
+        "30 desks": 3,
+        "10 desks": 2
+    
+      }
+      
+        
+      
+    }
+  ]
+  

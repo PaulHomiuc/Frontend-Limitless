@@ -36,6 +36,22 @@ left: 0;
   right: 0;
   margin-right: -50px;
 }
+.Tabel {
+  font-family: 'Fredoka';
+  text-align: center;
+}
+
+th,
+td {
+  background: rgba(245, 232, 232,10);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+p {
+  text-align: left;
+}
+
 .DeskRequest{
 
   font-family: 'Fredoka';

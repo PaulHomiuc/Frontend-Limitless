@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import "./Employee.css";
+import Table from "./DisplayTable";
 import { useState } from "react";
 export default function Employee() {
     function FormToggle(){
@@ -16,7 +17,7 @@ export default function Employee() {
     return (
         <body>
            <div className="Account">
-          <label>Your email here</label>
+          <label >Your email here</label>
           <img className="roundedImg" src="user.png" alt="UserIcon" ></img>
           <button className="btn">Logout</button>
           </div>
@@ -33,6 +34,8 @@ export default function Employee() {
         </div>
         <div className="DeskRequest" id="FormRequest" >
           <h1>File a desk Request</h1>
+          
+          <Table className="Tabel"/>
           <h3>Select an Office</h3>
           <h3 >  Reason for request</h3>
         <textarea className="Reason"></textarea>
