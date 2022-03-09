@@ -2,14 +2,17 @@ import React, {useEffect, useState} from "react";
 import "./Administrator.css";
 import {decodeJwt} from "jose";
 import {useNavigate} from "react-router-dom";
-
+const token = sessionStorage.getItem("token");
+try {
+  const user = decodeJwt(token);
+} catch (e) {
+  console.log(e.message);
+}
 const Administrator = () => {
   const [role, setRole] = useState("");
   const history = useNavigate();
-  useEffect =
+  /*useEffect =
     (() => {
-      const token = localStorage.getItem("token");
-      const user = decodeJwt(token);
       console.log(user);
       if (token) {
         console.log(user);
@@ -22,7 +25,7 @@ const Administrator = () => {
       }
     },
     []);
-
+*/
   async function populateQuote() {
     const req = await fetch("http://localhost:4000/api/admin", {
       headers: {
@@ -49,6 +52,11 @@ const Administrator = () => {
       <div className="element2">
         <img className="Information" src="writePage.png"></img>
         <button className="buttonMenu">Desk request</button>
+      </div>
+      <div className="Account">
+        <label id="account">user.email</label>
+        <img className="roundedImg" src="user.png" alt="UserIcon"></img>
+        <button className="btn">Logout</button>
       </div>
     </div>
   );
