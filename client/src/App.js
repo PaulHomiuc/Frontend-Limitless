@@ -1,7 +1,7 @@
 import React from "react";
 import {BrowserRouter, Route, Routes, Navigate} from "react-router-dom";
 import "./App.css";
-import {decodeJwt} from "jose";
+//import {decodeJwt} from "jose";
 import Preferences from "./preferences/Preferences.js";
 import Login from "./Login/Login.js";
 import Employee from "./employee/Employee";
@@ -9,8 +9,8 @@ import Register from "./signup/Register";
 import Administrator from "./admin/Administrator";
 import {useNavigate} from "react-router-dom";
 
-const token = localStorage.getItem("token");
-const decoded = decodeJwt(token);
+//const token = localStorage.getItem("token");
+//const decoded = decodeJwt(token);
 
 const App = () => {
   return (

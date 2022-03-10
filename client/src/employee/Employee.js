@@ -34,9 +34,9 @@ export default function Employee() {
         </div>
         <div className="DeskRequest" id="FormRequest" >
           <h1>File a desk Request</h1>
-          
-          <Table className="Tabel"/>
           <h3>Select an Office</h3>
+          <Table className="Tabel"/>
+          
           <h3 >  Reason for request</h3>
         <textarea className="Reason"></textarea>
         <button className="btn">Submit request</button>
