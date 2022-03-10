@@ -11,9 +11,10 @@
 }
 .Account {
   position: absolute;
-  top: 5%;
-  left: 100%;
-  margin-right: -180px;
+  top: 0;
+  right: 0;
+  margin-right: -50px;
+  font-family: 'Fredoka';
 }
 .Information {
   position: relative;
