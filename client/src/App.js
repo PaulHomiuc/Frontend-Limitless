@@ -7,7 +7,7 @@ import Login from "./Login/Login.js";
 import Employee from "./employee/Employee";
 import Register from "./signup/Register";
 import Administrator from "./admin/Administrator";
-import ProtectedRoute from "./ProtectedRoute.js";
+
 /*
 try {
   const token = sessionStorage.getItem("token");
@@ -25,6 +25,7 @@ const App = () => {
 
           <Route exact path="/employee" element={<Employee />} />
           <Route exact path="/admin" element={<Administrator />} />
+
           <Route exact path="/preferences" element={<Preferences />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
