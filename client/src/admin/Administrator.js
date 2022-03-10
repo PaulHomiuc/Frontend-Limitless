@@ -6,7 +6,7 @@ import {useNavigate} from "react-router-dom";
 const Administrator = () => {
   const [role, setRole] = useState("");
   const history = useNavigate();
-  /*
+  
   useEffect =
     (() => {
       const token = localStorage.getItem("token");
@@ -39,7 +39,7 @@ const Administrator = () => {
     }
     console.log(data);
   }
-*/
+
   return (
     <div className="Dashboard">
       <label>You are logged in as Administrator</label>

@@ -1,23 +1,12 @@
 [
-    {
-      "Office address": {
-        "Str universitatii":1
-        ,"Marasesti":2 
-      },
-      "Office Surface":{
-        "30mp":1,
-        "50mp":2
-
-
-      },
-      "Number of available desks: ": {
-        "30 desks": 3,
-        "10 desks": 2
-    
+     
+     {
+        "Office address":"str Marasesti nr 7",
+        "Office Name":"Building",
+        "Floor number":"parter",
+        "Number of desks": 50,
+        "Building":"buna ziua"
       }
-      
-        
-      
-    }
+    
   ]
   

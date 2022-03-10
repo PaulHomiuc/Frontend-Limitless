@@ -9,6 +9,12 @@
   align-items: center;
   font-family: "Fredoka";
 }
+.Account {
+  position: absolute;
+  top: 5%;
+  left: 100%;
+  margin-right: -180px;
+}
 .Information {
   position: relative;
   height: 50px;

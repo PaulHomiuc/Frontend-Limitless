@@ -1,16 +1,20 @@
 import React from "react";
 import {BrowserRouter, Route, Routes, Navigate} from "react-router-dom";
 import "./App.css";
-//import {decodeJwt} from "jose";
+import {decodeJwt} from "jose";
 import Preferences from "./preferences/Preferences.js";
 import Login from "./Login/Login.js";
 import Employee from "./employee/Employee";
 import Register from "./signup/Register";
 import Administrator from "./admin/Administrator";
-import {useNavigate} from "react-router-dom";
+import ProtectedRoute from "./ProtectedRoute.js";
 
-//const token = localStorage.getItem("token");
-//const decoded = decodeJwt(token);
+try {
+  const token = sessionStorage.getItem("token");
+  const decode = decodeJwt(token);
+} catch (e) {
+  console.log("eroare la decodarea tokenului: " + e.message);
+}
 
 const App = () => {
   return (
@@ -19,11 +23,12 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Navigate replace to="/login" />} />
 
-          <Route path="/employee" element={<Employee />} />
-          <Route path="/admin" element={<Administrator />} />
-          <Route path="/preferences" element={<Preferences />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route exact path="/employee" element={<Employee />} />
+          <Route exact path="/admin" element={<Administrator />} />
+          <Route exact path="/preferences" element={<Preferences />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/register" element={<Register />} />
+          { <Route path="*" element={() => "404 NOT FOUND"} /> }
         </Routes>
       </BrowserRouter>
     </div>
