@@ -3,16 +3,13 @@ import "./Login.css";
 import {useState} from "react";
 import {Navigate, useRoutes} from "react-router-dom";
 import {useNavigate} from "react-router-dom";
-
+import {decodeJwt} from "jose";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
   const navigate = useNavigate();
-  const redirect = () => {
-    navigate("/employee");
-  };
   async function loginUser(event) {
     event.preventDefault();
     const response = await fetch("http://localhost:4000/api/login", {
@@ -31,8 +28,22 @@ export default function Login() {
     if (data.user) {
       localStorage.setItem("token", data.user);
       alert("Connected");
+      console.log(data.user);
+      const user = decodeJwt(data.user);
 
-      navigate("/admin");
+      switch (user.role) {
+        case "admin":
+          navigate("/admin");
+          break;
+        case "officeadmin":
+          navigate("/officeadmin");
+          break;
+        case "employee":
+          navigate("/employee");
+          break;
+        default:
+          throw new Error();
+      }
     } else {
       document.getElementById("email").style.backgroundColor = "pink";
       document.getElementById("password").style.backgroundColor = "pink";
