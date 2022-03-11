@@ -11,11 +11,21 @@ function logOut() {
 
 function Employee() {
   function FormToggle() {
-    var box1 = document.getElementById("FormRequest");
-    if (box1.style.display == "none") {
-      box1.style.display = "block";
+    var box = document.getElementById("FormRequest");
+    if (box.classList.contains('hidden')) {
+      box.classList.remove('hidden');
+      setTimeout(function () {
+        box.classList.remove('visuallyhidden');
+      }, 20);
     } else {
-      box1.style.display = "none";
+      box.classList.add('visuallyhidden');    
+      box.addEventListener('transitionend', function(e) {
+        box.classList.add('hidden');
+      }, {
+        capture: false,
+        once: true,
+        passive: false
+      });
     }
   }
 
@@ -42,7 +52,7 @@ function Employee() {
               </button>
             </div>
           </div>
-          <div className="DeskRequest" id="FormRequest">
+          <div className="box" id="FormRequest">
             <h1>File a desk Request</h1>
             <h3>Select an Office</h3>
             <Table className="Tabel" />

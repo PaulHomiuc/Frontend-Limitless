@@ -52,22 +52,8 @@ p {
   text-align: left;
 }
 
-.DeskRequest{
 
-  font-family: 'Fredoka';
-  position:flex;
-  position: absolute;
-  display: flex;
-  width: 30%;
-  height: 50%;
-  top: 30%;
-  right: 30%;
-  display: block;
-  flex-direction: column;
-  align-items:center;
-  transition: all 1s linear;
-  
-}
+
 .Reason{
   position: relative;
   display: flex;
@@ -114,6 +100,25 @@ color: rgb(255, 255, 255);
  font-size: large;
 }
 
+.box {
+  font-family: 'Fredoka';
+  position:flex;
+  position: absolute;
+  display: flex;
+  width: 30%;
+  height: 50%;
+  top: 30%;
+  right: 30%; 
+  display: none;
+  flex-direction: column;
+  align-items:center;
+  background: rgba(245, 242, 234,30);
+  width: fit-content;
+  height: 300px;
+  margin: 30px auto;
+  transition: all 1s linear;
+  display: block;
+}
 
 .hidden {
   display: none;
