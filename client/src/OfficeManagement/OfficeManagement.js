@@ -8,7 +8,7 @@ import {decodeJwt} from "jose";
 export default function Register() {
   const [floornumber, setEmail] = useState("");
   const [totaldesks, setPassword] = useState("");
-  const [offname, setFname] = useState("");
+  const [officename, setFname] = useState("");
   const [bname, setLname] = useState("");
   const [usable, setRole] = useState("");
   const [offadm, setGender] = useState("");
@@ -25,7 +25,7 @@ export default function Register() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        offname,
+        officename,
         bname,
         floornumber,
         totaldesks,
@@ -61,7 +61,7 @@ export default function Register() {
             </p>
 
             <input
-              value={offname}
+              value={officename}
               id="offname"
               type="text"
               placeholder="Office Name"
@@ -91,7 +91,7 @@ export default function Register() {
               id="floornumber"
               className="input"
               type="number"
-              placeholder="email"
+              placeholder="floor number"
               value={floornumber}
               required
               onChange={handleOnChange}
@@ -119,6 +119,7 @@ export default function Register() {
               name="usable"
               id="usable"
               required
+              outlined
               placeholder="Usable Desks"
               value={usable}
               onInput={handleNumberusable}

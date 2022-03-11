@@ -1,8 +1,23 @@
 import React from "react";
 
-const data = require("./data.json");
+/*async function fetchData() {
+  const response = await fetch("http://localhost:4000/api/offices", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      officeName,
+      building,
+      floorNumber,
+      totalDesks,
+      usableDesks,
+      officeadmin,
+    }),
+  });*/
 
 const Table = () => {
+  const data = fetch("http://localhost:4000/api/offices");
   const dataImport = data[0];
 
   function renderHeaderCells() {
@@ -26,7 +41,7 @@ const Table = () => {
 
     subs.map((x, i) => {
       if (subs[i] !== undefined) {
-        Object.keys(subs[i]).map(y => {
+        Object.keys(subs[i]).map((y) => {
           subHeaders.push(<td>{y}</td>);
           return subHeaders;
         });
@@ -42,7 +57,7 @@ const Table = () => {
 
     res.map((x, i) => {
       if (res[i] !== undefined) {
-        Object.values(res[i]).map(y => {
+        Object.values(res[i]).map((y) => {
           results.push(<td>{y}</td>);
           return results;
         });

@@ -1,49 +1,46 @@
-
-body{
-background-color: #bbdefb;
-
+body {
+  background-color: #bbdefb;
 }
-.Dashboard{
-position: absolute;
-top: 0;
-left: 0;
-    background-color: rgb(38, 136, 228);
-    width: 400px;
-    height: 1080px;
-    margin: -10px;
-    display: flex;
+.Dashboard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(38, 136, 228);
+  width: 400px;
+  height: 1080px;
+  margin: -10px;
+  display: flex;
   flex-direction: column;
-  align-items:center;
-  font-family: 'Fredoka';
+  align-items: center;
+  font-family: "Fredoka";
   border-right-color: rgba(235, 227, 217, 0.644);
-  border-right-width: 10px;  
-  border-right-style:dotted;
+  border-right-width: 10px;
+  border-right-style: dotted;
 }
-.Information{
-    position:relative;
-    height: 50px;
-    align-items: center;
-    margin-left: 20%;
+.Information {
+  position: relative;
+  height: 50px;
+  align-items: center;
+  margin-left: 20%;
 }
-.roundedImg{
+.roundedImg {
   border-radius: 50%;
   height: 30px;
 }
-.Account{
-
+.Account {
   position: absolute;
   top: 0;
   right: 0;
   margin-right: -50px;
 }
 .Tabel {
-  font-family: 'Fredoka';
+  font-family: "Fredoka";
   text-align: center;
 }
 
 th,
 td {
-  background: rgba(245, 232, 232,10);
+  background: rgba(245, 232, 232, 10);
   border-radius: 5px;
   padding: 10px;
 }
@@ -52,29 +49,27 @@ p {
   text-align: left;
 }
 
-.DeskRequest{
-
-  font-family: 'Fredoka';
-  position:flex;
+.DeskRequest {
+  font-family: "Fredoka";
+  position: flex;
   position: absolute;
   display: flex;
   width: 30%;
   height: 50%;
   top: 30%;
   right: 30%;
-  display: block;
+  display: none;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
   transition: all 1s linear;
-  
 }
-.Reason{
+.Reason {
   position: relative;
   display: flex;
   display: block;
   flex-direction: column;
-  align-items:center;
-  font-family: 'Fredoka';
+  align-items: center;
+  font-family: "Fredoka";
   height: fit-content;
   width: 80%;
   min-height: 30%;
@@ -84,36 +79,33 @@ p {
   border-color: rgb(131, 139, 137);
   resize: none;
 }
-.element1{
+.element1 {
   align-items: center;
   display: flex;
   align-content: center;
   height: 15%;
   width: 90%;
-  
 }
-.element2{
+.element2 {
   align-items: center;
   align-content: center;
   display: flex;
   height: 15%;
   width: 90%;
-
 }
-.buttonMenu{
+.buttonMenu {
   align-content: center;
   display: block;
   font-size: large;
   padding: 1rem 1rem;
 
-  margin-left: 10%
+  margin-left: 10%;
 }
-.btn{
-background-color: rgb(118, 119, 122);
-color: rgb(255, 255, 255);
- font-size: large;
+.btn {
+  background-color: rgb(118, 119, 122);
+  color: rgb(255, 255, 255);
+  font-size: large;
 }
-
 
 .hidden {
   display: none;
