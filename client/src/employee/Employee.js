@@ -6,7 +6,7 @@ import {decodeJwt} from "jose";
 
 function logOut() {
   localStorage.clear();
-  window.location.replace("http://localhost:3000/login");
+  window.location.assign("http://localhost:3000/login");
 }
 
 function Employee() {
@@ -24,7 +24,7 @@ function Employee() {
   const user = decodeJwt(token);
 
   if (!token) {
-    window.location.replace("http://localhost:3000/login");
+    window.location.assign("http://localhost:3000/login");
   } else {
     if (user.role === "employee")
       return (
@@ -61,7 +61,7 @@ function Employee() {
         </body>
       );
     else {
-      window.location.replace("http://localhost:3000/login");
+      window.location.assign("http://localhost:3000/login");
     }
   }
 }

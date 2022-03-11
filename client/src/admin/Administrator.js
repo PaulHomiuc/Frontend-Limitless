@@ -3,18 +3,23 @@ import {decodeJwt} from "jose";
 
 function logOut() {
   localStorage.clear();
-  window.location.replace("http://localhost:3000/login");
+  window.location.assign("http://localhost:3000/login");
 }
+
 function register() {
-  window.location.replace("http://localhost:3000/register");
+  window.location.assign("http://localhost:3000/register");
 }
+function officeManagement(){
+  window.location.assign("http://localhost:3000/officemanage");
+}
+
 function Administrator() {
   const token = localStorage.getItem("token");
   console.log(token);
   const user = decodeJwt(token);
 
   if (token === null) {
-    window.location.replace("http://localhost:3000/login");
+    window.location.assign("http://localhost:3000/login");
   } else {
   }
   if (user.role === "admin")
@@ -23,8 +28,8 @@ function Administrator() {
         <div className="Dashboard">
           <label>You are logged in as Administrator</label>
           <div className="element1">
-            <img className="Information" src="/Information.png" alt="user profile"></img>
-            <button className="buttonMenu">Account information</button>
+            <img className="Information" src="/deskIcon.png" alt="user profile"></img>
+            <button className="buttonMenu" onClick={officeManagement}>Office Management</button>
           </div>
           <div className="element2">
             <img className="Information" src="writePage.png"></img>
@@ -43,7 +48,7 @@ function Administrator() {
       </body>
     );
   else {
-    window.location.replace("http://localhost:3000/login");
+    window.location.assign("http://localhost:3000/login");
   }
 }
 export default Administrator;

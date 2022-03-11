@@ -65,6 +65,8 @@ p {
   display: block;
   flex-direction: column;
   align-items:center;
+  transition: all 1s linear;
+  
 }
 .Reason{
   position: relative;
@@ -110,4 +112,13 @@ p {
 background-color: rgb(118, 119, 122);
 color: rgb(255, 255, 255);
  font-size: large;
+}
+
+
+.hidden {
+  display: none;
+}
+
+.visuallyhidden {
+  opacity: 0;
 }
