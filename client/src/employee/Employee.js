@@ -8,7 +8,25 @@ function logOut() {
   localStorage.clear();
   window.location.assign("http://localhost:3000/login");
 }
+var officeName, building, floorNumber, totalDesks, usableDesks, officeadmin;
+async function fetchData() {
+  const response = await fetch("http://localhost:4000/api/offices", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      officeName,
+      building,
+      floorNumber,
+      totalDesks,
+      usableDesks,
+      officeadmin,
+    }),
+  });
 
+  const data = await response.json();
+}
 function Employee() {
   function FormToggle() {
     var box = document.getElementById("FormRequest");
