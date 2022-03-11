@@ -6,6 +6,8 @@ import Login from "./Login/Login.js";
 import Employee from "./employee/Employee";
 import Register from "./signup/Register";
 import Administrator from "./admin/Administrator";
+import OfficeManagement from "./OfficeManagement/OfficeManagement";
+import NOTFOUND from "./NOTFOUND.js";
 
 const App = () => {
   return (
@@ -20,7 +22,9 @@ const App = () => {
           <Route exact path="/preferences" element={<Preferences />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
-          {<Route path="*" element={() => "404 NOT FOUND"} />}
+          <Route exact path="/officemanage" element={<OfficeManagement />} />
+
+          <Route path="*" element={<NOTFOUND />} />
         </Routes>
       </BrowserRouter>
     </div>

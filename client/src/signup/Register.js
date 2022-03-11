@@ -50,7 +50,7 @@ export default function Register() {
     });
     const data = await response.json();
     console.log(data);
-    if (data.status === "ok") navigate("/login");
+    if (data.status === "ok") navigate("/admin");
   }
   const handleOnChange = (e) => {
     setEmail(e.target.value);
