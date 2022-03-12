@@ -8,7 +8,7 @@ function logOut() {
   localStorage.clear();
   window.location.assign("http://localhost:3000/login");
 }
-var officeName, building, floorNumber, totalDesks, usableDesks, officeadmin;
+var officeName, building, floorNumber, totalDesks, usableDesks, officeAdmin;
 async function fetchData() {
   const response = await fetch("http://localhost:4000/api/offices", {
     method: "GET",

@@ -9,7 +9,7 @@ function logOut() {
 function register() {
   window.location.assign("http://localhost:3000/register");
 }
-function officeManagement(){
+function officeManagement() {
   window.location.assign("http://localhost:3000/officemanage");
 }
 
@@ -29,10 +29,12 @@ function Administrator() {
           <label>You are logged in as Administrator</label>
           <div className="element1">
             <img className="Information" src="/deskIcon.png" alt="user profile"></img>
-            <button className="buttonMenu" onClick={officeManagement}>Office Management</button>
+            <button className="buttonMenu" onClick={officeManagement}>
+              Office Management
+            </button>
           </div>
           <div className="element2">
-            <img className="Information" src="writePage.png"></img>
+            <img className="Information" src="writePage.png" alt="WritePage icon"></img>
             <button className="buttonMenu" id="button1" onClick={register}>
               Add user
             </button>
