@@ -1,36 +1,39 @@
-.login-wrapper {
+.Office-wrapper {
   display: flex;
   flex-direction: column;
   margin: -10px;
   align-items: center;
   font-family: "Fredoka", cursive;
-  background-image: url("/public/birou.jpg");
+  background-image: url("/public/buildings.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: auto;
+    min-width: 100%;
+    height: 1000px;
+    min-height: 100%;
   /* Full height */
 
   /* Center and scale the image nicely */
   overflow: auto;
   background-repeat: no-repeat;
 }
+.navbar{
+  position:absolute;
+  top:0;
+  left:10%;
+
+}
 
 .AddBuilding {
   /* The image used */
   display: flex;
+  position: inherit;
   flex-direction: column;
   align-items: center;
   font-family: "Fredoka", cursive;
   margin: -8px;
-  background-image: url("/public/buildings.png");
-  /* Full height */
-  min-width: 100%;
-  height: 1000px;
-  min-height: 100%;
-  /* position: fixed; */
-  overflow: auto;
 
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 .formular {
   background-color: rgba(246, 249, 252, 50%);
@@ -56,10 +59,10 @@ input {
   align-items: center;
 }
 
-buttonCustom {
+.buttonOffice {
   display: inline-block;
   padding: 10px 10px;
-  font-size: 20px;
+  font-size: 18px;
   cursor: pointer;
   text-align: center;
 
@@ -89,3 +92,32 @@ input:hover {
 input:active {
   background-color: #bbb8b8;
 }
+
+.box1 {
+  font-family: 'Fredoka';
+  position:flex;
+  position: absolute;
+  display: flex;
+  width: 30%;
+  height: 50%;
+  top: 0;
+  right: 40%; 
+  display: none;
+  flex-direction: column;
+  align-items:center;
+  background: rgba(245, 242, 234,30);
+  width: fit-content;
+  height: 300px;
+  margin: 30px auto;
+  transition: all 1s linear;
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.visuallyhidden {
+  opacity: 0;
+}
+

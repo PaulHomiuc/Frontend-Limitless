@@ -21,7 +21,7 @@ async function fetchData() {
       floorNumber,
       totalDesks,
       usableDesks,
-      officeadmin,
+      officeAdmin
     }),
   });
 

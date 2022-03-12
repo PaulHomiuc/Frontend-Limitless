@@ -16,7 +16,24 @@ export default function Register() {
   const token = localStorage.getItem("token");
   const user = decodeJwt(token);
   const navigate = useNavigate();
-
+  function FormToggle() {
+    var box1 = document.getElementById("Form1");
+    if (box1.classList.contains('hidden')) {
+      box1.classList.remove('hidden');
+      setTimeout(function () {
+        box1.classList.remove('visuallyhidden');
+      }, 20);
+    } else {
+      box1.classList.add('visuallyhidden');    
+      box1.addEventListener('transitionend', function(e) {
+        box1.classList.add('hidden');
+      }, {
+        capture: false,
+        once: true,
+        passive: false
+      });
+    }
+  }
   async function registerOffice(event) {
     event.preventDefault();
     const response = await fetch("http://localhost:4000/api/officemanage", {
@@ -52,7 +69,13 @@ export default function Register() {
   };
   if (user.role === "admin") {
     return (
-      <div className="AddBuilding">
+      <body className="Office-wrapper">
+      <div className="navbar" >
+        <button className="buttonOffice" onClick={FormToggle}>Add Office</button>
+        <button className="buttonOffice">Update Office</button>
+        <button className="buttonOffice">Delete Office</button>
+        </div>
+      <div  className="box1" id="Form1">
         <h1 className="headereg">Add a new Office</h1>
         <form className="formular">
           <label>
@@ -139,12 +162,13 @@ export default function Register() {
           </label>
 
           <div>
-            <button type="submit" onClick={registerOffice}>
+            <button type="submit" className="buttonOffice" onClick={registerOffice}>
               Submit
             </button>
           </div>
         </form>
       </div>
+      </body>
     );
   } else {
     alert("This path requires Administrator privileges, please log in.");

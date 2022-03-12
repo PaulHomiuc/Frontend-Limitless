@@ -26,24 +26,30 @@ function Administrator() {
     return (
       <body>
         <div className="Dashboard">
-          <label>You are logged in as Administrator</label>
+          <label className="lblAdmin">You are logged in as Administrator</label>
           <div className="element1">
             <img className="Information" src="/deskIcon.png" alt="user profile"></img>
-            <button className="buttonMenu" onClick={officeManagement}>
+            <button className="buttonOffice" onClick={officeManagement}>
               Office Management
             </button>
           </div>
           <div className="element2">
             <img className="Information" src="writePage.png" alt="WritePage icon"></img>
-            <button className="buttonMenu" id="button1" onClick={register}>
-              Add user
+            <button className="buttonOffice" id="button1" onClick={register}>
+              User Management
+            </button>
+          </div>
+          <div className="element2">
+            <img className="Information" src="building-icon.png" alt="building icon"></img>
+            <button className="buttonOffice" id="button1" onClick={register}>
+              Buildings Management
             </button>
           </div>
         </div>
         <div className="Account">
           <label id="account">{decodeJwt(token).email}</label>
           <img className="roundedImg" src="user.png" alt="UserIcon"></img>
-          <button className="btn" onClick={logOut}>
+          <button className="buttonOffice" onClick={logOut}>
             Logout
           </button>
         </div>

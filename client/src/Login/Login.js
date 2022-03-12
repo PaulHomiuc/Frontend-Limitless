@@ -101,7 +101,7 @@ export default function Login() {
           />
         </label>
         <div>
-          <button className="buttonCustom" type="submit" onClick={loginUser}>
+          <button className="buttonLogin" type="submit" onClick={loginUser}>
             Submit
           </button>
         </div>
