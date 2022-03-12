@@ -6,6 +6,7 @@ import Login from "./Login/Login.js";
 import Employee from "./employee/Employee";
 import Register from "./signup/Register";
 import Administrator from "./admin/Administrator";
+import OfficeAdmin from "./OfficeAdmin/OfficeAdmin";
 import OfficeManagement from "./OfficeManagement/OfficeManagement";
 import NOTFOUND from "./NOTFOUND.js";
 
@@ -18,6 +19,7 @@ const App = () => {
 
           <Route exact path="/employee" element={<Employee />} />
           <Route exact path="/admin" element={<Administrator />} />
+          <Route exact path="/OfficeAdmin" element={<OfficeAdmin />} />
 
           <Route exact path="/preferences" element={<Preferences />} />
           <Route exact path="/login" element={<Login />} />

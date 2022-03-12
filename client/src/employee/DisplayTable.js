@@ -12,7 +12,7 @@ import React from "react";
       floorNumber,
       totalDesks,
       usableDesks,
-      officeadmin,
+      officeAdmin,
     }),
   });*/
 
