@@ -52,7 +52,7 @@ export default function Register() {
   };
   if (user.role === "admin") {
     return (
-      <div className="Register">
+      <div className="AddBuilding">
         <h1 className="headereg">Add a new Office</h1>
         <form className="formular">
           <label>

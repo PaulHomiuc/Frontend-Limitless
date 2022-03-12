@@ -12,14 +12,14 @@
   background-repeat: no-repeat;
 }
 
-.Register {
+.AddBuilding {
   /* The image used */
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: "Fredoka", cursive;
   margin: -8px;
-  background-image: url("/public/birou.jpg");
+  background-image: url("/public/buildings.png");
   /* Full height */
   min-width: 100%;
   height: 1000px;
