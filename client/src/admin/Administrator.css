@@ -1,20 +1,25 @@
 .Dashboard {
   position: absolute;
   background-color: rgb(38, 136, 228);
+  left: 0;
+  top: 0;
   width: 400px;
-  height: 1080px;
-  margin: -10px;
+  height: 900x;
+  
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: "Fredoka";
 }
 .Account {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-right: -120px;
-  font-family: 'Fredoka';
+  position: relative;
+  margin-top: 0;
+  margin-left: 90%;
+  width: fit-content;
+  display: block;
+  
+  align-items: right;
+  
 }
 .Information {
   position: relative;

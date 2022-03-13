@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import "./OfficeEdit.css";
 const getOffices = () => fetch("http://localhost:4000/api/offices").then((res) => res.json());
 
-export default function OfficeEdit() {
+const Offices = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ export default function OfficeEdit() {
     fetchItems();
   }, []);
   return (
-    <div className="AddBuilding">
+    <div >
       <div>
         <h3>Office List</h3>
         <table>
@@ -26,7 +26,7 @@ export default function OfficeEdit() {
               <th>Office Administrator</th>
               <th>Total no. of desks</th>
               <th>Usable no. of desks</th>
-              <th>Action</th>
+              <th colSpan={2}>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -42,6 +42,9 @@ export default function OfficeEdit() {
                 <td>
                   <Link to={`/officemanage/${off._id}`}>Edit</Link>
                 </td>
+                 <td>
+                  <Link to={`/officemanage/${off._id}`}>Delete</Link>
+                </td>
               </tr>
             ))}
           </tbody>
@@ -50,3 +53,4 @@ export default function OfficeEdit() {
     </div>
   );
 }
+  export default Offices;

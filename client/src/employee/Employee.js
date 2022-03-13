@@ -61,7 +61,7 @@ function Employee() {
     if (user.role === "employee")
       return (
         <body>
-          <div className="Dashboard">
+          <div className="DashboardEmployee">
             <label className="buttonMenu">You are logged in as Employee</label>
             <div className="element1">
               <img className="Information" src="/Information.png"></img>
@@ -86,7 +86,7 @@ function Employee() {
           <div className="Account">
             <label>{decodeJwt(token).email}</label>
             <img className="roundedImg" src="user.png" alt="UserIcon"></img>
-            <button className="btn" onClick={logOut}>
+            <button className="buttonOffice" onClick={logOut}>
               Logout
             </button>
           </div>
