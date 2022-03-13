@@ -4,6 +4,7 @@ import {useState} from "react";
 import {Navigate, useRoutes} from "react-router-dom";
 import {useNavigate} from "react-router-dom";
 import {decodeJwt} from "jose";
+import Offices from "./OfficeEdit";
 
 export default function Register() {
   const [floornumber, setEmail] = useState("");
@@ -19,27 +20,29 @@ export default function Register() {
   function redirect() {
     window.location.assign("http://localhost:3000/officemanage/edit");
   }
-  function FormToggle() {
+  
+function logOut() {
+  localStorage.clear();
+  window.location.assign("http://localhost:3000/login");
+}
+  function FormSet() {
     var box1 = document.getElementById("Form1");
-    if (box1.classList.contains("hidden")) {
-      box1.classList.remove("hidden");
-      setTimeout(function () {
-        box1.classList.remove("visuallyhidden");
-      }, 20);
-    } else {
-      box1.classList.add("visuallyhidden");
-      box1.addEventListener(
-        "transitionend",
-        function (e) {
-          box1.classList.add("hidden");
-        },
-        {
-          capture: false,
-          once: true,
-          passive: false,
-        }
-      );
-    }
+    var box2 = document.getElementById("table");
+
+
+      box2.style.display="none";
+      box1.style.display="block";
+    
+  }
+  function TableSet() {
+    var box1 = document.getElementById("Form1");
+    var box2 = document.getElementById("table");
+
+   
+      box1.style.display="none";
+      box2.style.display="block";
+    
+
   }
   async function registerOffice(event) {
     event.preventDefault();
@@ -59,7 +62,7 @@ export default function Register() {
     });
     const data = await response.json();
     console.log(data);
-    if (data.status === "ok") navigate("/admin");
+    if (data.status === "ok") navigate("/officemanage");
   }
   function handleNumbertotal() {
     if (document.getElementById("totaldesks").value <= 0) {
@@ -78,13 +81,13 @@ export default function Register() {
     return (
       <body className="Office-wrapper">
         <div className="navbar">
-          <button className="buttonOffice" onClick={FormToggle}>
+          <button className="buttonOffice" onClick={FormSet}>
             Add Office
           </button>
-          <button className="buttonOffice" onClick={redirect}>
+          <button className="buttonOffice" onClick={TableSet}>
             Update Office
           </button>
-          <button className="buttonOffice">Delete Office</button>
+        
         </div>
         <div className="box1" id="Form1">
           <h1 className="headereg">Add a new Office</h1>
@@ -177,8 +180,19 @@ export default function Register() {
                 Submit
               </button>
             </div>
+          
           </form>
         </div>
+        <div className="TableOffices" id="table">
+        <Offices />
+        </div>
+        <div className="AccountOffices">
+            <label>{decodeJwt(token).email}</label>
+            <img className="roundedImg" src="user.png" alt="UserIcon"></img>
+            <button className="buttonOffice" onClick={logOut}>
+              Logout
+            </button>
+          </div>
       </body>
     );
   } else {

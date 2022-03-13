@@ -24,7 +24,7 @@ function Administrator() {
   }
   if (user.role === "admin")
     return (
-      <body>
+      <body >
         <div className="Dashboard">
           <label className="lblAdmin">You are logged in as Administrator</label>
           <div className="element1">
