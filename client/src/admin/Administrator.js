@@ -7,7 +7,7 @@ function logOut() {
 }
 
 function register() {
-  window.location.assign("http://localhost:3000/register");
+  window.location.assign("http://localhost:3000/users");
 }
 function officeManagement() {
   window.location.assign("http://localhost:3000/officemanage");

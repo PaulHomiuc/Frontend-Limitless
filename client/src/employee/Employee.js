@@ -77,7 +77,6 @@ function Employee() {
           <div className="box" id="FormRequest">
             <h1>File a desk Request</h1>
             <h3>Select an Office</h3>
-            <Table className="Tabel" />
 
             <h3> Reason for request</h3>
             <textarea className="Reason"></textarea>

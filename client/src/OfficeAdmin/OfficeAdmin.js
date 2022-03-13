@@ -7,7 +7,7 @@ function logOut() {
 }
 
 function register() {
-  window.location.assign("/register");
+  window.location.assign("/users");
 }
 function officeManagement() {
   window.location.assign("/officemanage");

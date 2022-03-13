@@ -5,6 +5,8 @@ import Preferences from "./preferences/Preferences.js";
 import Login from "./Login/Login.js";
 import Employee from "./employee/Employee";
 import Register from "./signup/Register";
+import UserEdit from "./signup/UserEdit";
+import {UpdateUser} from "./signup/UpdateUser";
 import Administrator from "./admin/Administrator";
 import OfficeAdmin from "./OfficeAdmin/OfficeAdmin";
 import OfficeManagement from "./OfficeManagement/OfficeManagement";
@@ -24,7 +26,9 @@ const App = () => {
 
           <Route exact path="/preferences" element={<Preferences />} />
           <Route exact path="/login" element={<Login />} />
-          <Route exact path="/register" element={<Register />} />
+          <Route exact path="/users" element={<Register />} />
+          <Route exact path="/users/edit" element={<UserEdit />} />
+          <Route path="/users/:id" element={<UpdateUser />} />
           <Route exact path="/officemanage" element={<OfficeManagement />} />
           <Route exact path="/officemanage/edit" element={<OfficeEdit />} />
           <Route path="*" element={<NOTFOUND />} />
