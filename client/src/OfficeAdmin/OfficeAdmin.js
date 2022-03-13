@@ -3,14 +3,14 @@ import {decodeJwt} from "jose";
 
 function logOut() {
   localStorage.clear();
-  window.location.assign("http://localhost:3000/login");
+  window.location.assign("/login");
 }
 
 function register() {
-  window.location.assign("http://localhost:3000/register");
+  window.location.assign("/register");
 }
 function officeManagement() {
-  window.location.assign("http://localhost:3000/officemanage");
+  window.location.assign("/officemanage");
 }
 
 function OfficeAdmin() {
@@ -19,10 +19,10 @@ function OfficeAdmin() {
   const user = decodeJwt(token);
 
   if (token === null) {
-    window.location.assign("http://localhost:3000/login");
+    window.location.assign("/login");
   } else {
   }
-  if (user.role === "admin")
+  if (user.role === "officeadmin")
     return (
       <body>
         <div className="DeskOffice">
@@ -77,7 +77,7 @@ function OfficeAdmin() {
       </body>
     );
   else {
-    window.location.assign("http://localhost:3000/login");
+    window.location.assign("/login");
   }
 }
 export default OfficeAdmin;

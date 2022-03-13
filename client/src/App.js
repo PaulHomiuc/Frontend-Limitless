@@ -8,6 +8,7 @@ import Register from "./signup/Register";
 import Administrator from "./admin/Administrator";
 import OfficeAdmin from "./OfficeAdmin/OfficeAdmin";
 import OfficeManagement from "./OfficeManagement/OfficeManagement";
+import OfficeEdit from "./OfficeManagement/OfficeEdit";
 import NOTFOUND from "./NOTFOUND.js";
 
 const App = () => {
@@ -19,13 +20,13 @@ const App = () => {
 
           <Route exact path="/employee" element={<Employee />} />
           <Route exact path="/admin" element={<Administrator />} />
-          <Route exact path="/OfficeAdmin" element={<OfficeAdmin />} />
+          <Route exact path="/officeadmin" element={<OfficeAdmin />} />
 
           <Route exact path="/preferences" element={<Preferences />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/officemanage" element={<OfficeManagement />} />
-
+          <Route exact path="/officemanage/edit" element={<OfficeEdit />} />
           <Route path="*" element={<NOTFOUND />} />
         </Routes>
       </BrowserRouter>

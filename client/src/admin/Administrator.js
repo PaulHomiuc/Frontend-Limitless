@@ -41,7 +41,7 @@ function Administrator() {
           </div>
           <div className="element2">
             <img className="Information" src="building-icon.png" alt="building icon"></img>
-            <button className="buttonOffice" id="button1" onClick={register}>
+            <button className="buttonOffice" id="button1" onClick={officeManagement}>
               Buildings Management
             </button>
           </div>

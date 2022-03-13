@@ -11,7 +11,7 @@ function logOut() {
 var officeName, building, floorNumber, totalDesks, usableDesks, officeAdmin;
 async function fetchData() {
   const response = await fetch("http://localhost:4000/api/offices", {
-    method: "GET",
+    method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
@@ -21,7 +21,7 @@ async function fetchData() {
       floorNumber,
       totalDesks,
       usableDesks,
-      officeAdmin
+      officeAdmin,
     }),
   });
 
@@ -30,20 +30,24 @@ async function fetchData() {
 function Employee() {
   function FormToggle() {
     var box = document.getElementById("FormRequest");
-    if (box.classList.contains('hidden')) {
-      box.classList.remove('hidden');
+    if (box.classList.contains("hidden")) {
+      box.classList.remove("hidden");
       setTimeout(function () {
-        box.classList.remove('visuallyhidden');
+        box.classList.remove("visuallyhidden");
       }, 20);
     } else {
-      box.classList.add('visuallyhidden');    
-      box.addEventListener('transitionend', function(e) {
-        box.classList.add('hidden');
-      }, {
-        capture: false,
-        once: true,
-        passive: false
-      });
+      box.classList.add("visuallyhidden");
+      box.addEventListener(
+        "transitionend",
+        function (e) {
+          box.classList.add("hidden");
+        },
+        {
+          capture: false,
+          once: true,
+          passive: false,
+        }
+      );
     }
   }
 

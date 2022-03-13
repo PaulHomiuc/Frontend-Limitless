@@ -1,23 +1,9 @@
 import React from "react";
 
-/*async function fetchData() {
-  const response = await fetch("http://localhost:4000/api/offices", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      officeName,
-      building,
-      floorNumber,
-      totalDesks,
-      usableDesks,
-      officeAdmin,
-    }),
-  });*/
+const getOffices = () => fetch("http://localhost:4000/api/offices").then((res) => res.json());
 
 const Table = () => {
-  const data = fetch("http://localhost:4000/api/offices");
+  const data = getOffices();
   const dataImport = data[0];
 
   function renderHeaderCells() {

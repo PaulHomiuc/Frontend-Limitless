@@ -24,12 +24,14 @@
 .InformationOffice {
   position: relative;
   height: 50px;
+  font-family: "Fredoka";
   align-items: center;
   margin-left: 20%;
 }
 .element1Office {
   align-items: center;
   display: flex;
+  font-family: "Fredoka";
   align-content: center;
   height: 15%;
   width: 90%;
@@ -37,6 +39,7 @@
 .element2Office {
   align-items: center;
   align-content: center;
+  font-family: "Fredoka";
   display: flex;
   height: 15%;
   width: 90%;
@@ -44,6 +47,7 @@
 .element3Office {
   align-items: center;
   align-content: center;
+  font-family: "Fredoka";
   display: flex;
   height: 15%;
   width: 90%;
@@ -53,13 +57,14 @@
   display: block;
   font-size: large;
   padding: 1rem 1rem;
-
+  font-family: "Fredoka";
   margin-left: 10%;
 }
 .btnOffice {
   background-color: rgb(118, 119, 122);
   color: rgb(255, 255, 255);
   font-size: large;
+  font-family: "Fredoka";
 }
 .roundedImgOffice {
   border-radius: 50%;
@@ -74,6 +79,7 @@
   margin-top: -2%;
   margin-right: -15px;
   margin-left: 23%;
+  font-family: "Fredoka";
   padding: 30px;
   text-align: left;
   background: #075eaf;
