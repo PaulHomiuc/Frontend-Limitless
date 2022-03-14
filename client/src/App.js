@@ -12,7 +12,7 @@ import OfficeAdmin from "./OfficeAdmin/OfficeAdmin";
 import OfficeManagement from "./OfficeManagement/OfficeManagement";
 import OfficeEdit from "./OfficeManagement/OfficeEdit";
 import NOTFOUND from "./NOTFOUND.js";
-
+import BuildingAdd from "./buildings/BuildingAdd";
 const App = () => {
   return (
     <div className="bg">
@@ -31,6 +31,7 @@ const App = () => {
           <Route path="/users/:id" element={<UpdateUser />} />
           <Route exact path="/officemanage" element={<OfficeManagement />} />
           <Route exact path="/officemanage/edit" element={<OfficeEdit />} />
+          <Route exact path="/buildings" element={<BuildingAdd />} />
           <Route path="*" element={<NOTFOUND />} />
         </Routes>
       </BrowserRouter>

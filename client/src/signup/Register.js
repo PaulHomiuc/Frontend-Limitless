@@ -18,9 +18,9 @@ export default function Register() {
   const token = localStorage.getItem("token");
   const user = decodeJwt(token);
   const navigate = useNavigate();
-
+  const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g;
   const emailValidation = () => {
-    const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g;
+   
     if (regEx.test(email)) {
       setMessage("Email is Valid");
     } else if (!regEx.test(email) && email !== "") {
@@ -101,6 +101,7 @@ export default function Register() {
               required
               onInput={emailValidation}
               onChange={handleOnChange}
+              pattern={regEx}
             />
           </label>
           <label>
@@ -174,7 +175,7 @@ export default function Register() {
           </label>
 
           <div>
-            <button type="submit" onClick={registerUser}>
+            <button className="buttonOffice" type="submit" onClick={registerUser}>
               Submit
             </button>
           </div>

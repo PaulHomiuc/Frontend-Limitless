@@ -1,19 +1,29 @@
-import React, {Component} from "react";
+import React, {Component,useEffect} from "react";
 import "./OfficeManagement.css";
 import {useState} from "react";
-import {Navigate, useRoutes} from "react-router-dom";
+import {Navigate} from "react-router-dom";
 import {useNavigate} from "react-router-dom";
 import {decodeJwt} from "jose";
 import Offices from "./OfficeEdit";
+const getBuildings = () => fetch("http://localhost:4000/api/buildinget").then((res) => res.json());
 
 export default function Register() {
+  const [items, setItems] = useState([]);
+  useEffect(() => {
+    const fetchItems = async () => {
+      const buildings = await getBuildings();
+      
+      setItems(buildings);
+    };
+    fetchItems();
+  }, []);
   const [floornumber, setEmail] = useState("");
   const [totaldesks, setPassword] = useState("");
   const [officename, setFname] = useState("");
   const [bname, setLname] = useState("");
   const [usable, setRole] = useState("");
   const [offadm, setGender] = useState("");
-
+  
   const token = localStorage.getItem("token");
   const user = decodeJwt(token);
   const navigate = useNavigate();
@@ -60,6 +70,10 @@ function logOut() {
         offadm,
       }),
     });
+  
+  
+
+    
     const data = await response.json();
     console.log(data);
     if (data.status === "ok") navigate("/officemanage");
@@ -110,14 +124,14 @@ function logOut() {
               <p>
                 Building<b>*</b>
               </p>
-              <input
-                value={bname}
-                id="bname"
-                type="text"
-                placeholder="Building"
-                required
-                onChange={(e) => setLname(e.target.value)}
-              />
+              <select className="Building-Select"  onChange={(e) => setLname(e.target.value)}>
+              <option disabled selected>Chose a building</option>
+            {items.map((bld) => (
+
+                <option className="Building-Selected">{bld.buildingName}</option>
+            
+            ))}
+            </select>
             </label>
             <label>
               <p>
