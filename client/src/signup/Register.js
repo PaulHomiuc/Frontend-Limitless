@@ -20,7 +20,6 @@ export default function Register() {
   const navigate = useNavigate();
   const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g;
   const emailValidation = () => {
-   
     if (regEx.test(email)) {
       setMessage("Email is Valid");
     } else if (!regEx.test(email) && email !== "") {
@@ -129,6 +128,10 @@ export default function Register() {
               value={role}
               onChange={(e) => setRole(e.target.value)}
             >
+              {" "}
+              <option selected disabled>
+                Choose role...
+              </option>
               <option value="admin">Administrator</option>
               <option value="officeadmin">Office Administrator</option>
               <option value="employee">Employee</option>
@@ -146,6 +149,10 @@ export default function Register() {
               value={gender}
               onChange={(e) => setGender(e.target.value)}
             >
+              {" "}
+              <option selected disabled>
+                Choose gender...
+              </option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
               <option value="Other">Other</option>

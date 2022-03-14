@@ -12,6 +12,9 @@ function register() {
 function officeManagement() {
   window.location.assign("http://localhost:3000/officemanage");
 }
+function buildingsManagement() {
+  window.location.assign("http://localhost:3000/buildings");
+}
 
 function Administrator() {
   const token = localStorage.getItem("token");
@@ -24,7 +27,7 @@ function Administrator() {
   }
   if (user.role === "admin")
     return (
-      <body >
+      <body>
         <div className="Dashboard">
           <label className="lblAdmin">You are logged in as Administrator</label>
           <div className="element1">
@@ -41,7 +44,7 @@ function Administrator() {
           </div>
           <div className="element2">
             <img className="Information" src="building-icon.png" alt="building icon"></img>
-            <button className="buttonOffice" id="button1" onClick={officeManagement}>
+            <button className="buttonOffice" id="button1" onClick={buildingsManagement}>
               Buildings Management
             </button>
           </div>

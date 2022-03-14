@@ -75,7 +75,7 @@ export default function UserEdit() {
                   <Link to={`/users/${user._id}`}>Edit</Link>
                 </td>
                 <td>
-                  <Link to={deleteUser(user._id)}>Delete</Link>
+                  <Link to={`/users/${user._id}`}>Delete</Link>
                 </td>
               </tr>
             ))}

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {Link} from "react-router-dom";
 import "./OfficeEdit.css";
+
 const getOffices = () => fetch("http://localhost:4000/api/offices").then((res) => res.json());
 
 const Offices = () => {
@@ -14,7 +15,7 @@ const Offices = () => {
     fetchItems();
   }, []);
   return (
-    <div >
+    <div>
       <div>
         <h3>Office List</h3>
         <table>
@@ -42,7 +43,7 @@ const Offices = () => {
                 <td>
                   <Link to={`/officemanage/${off._id}`}>Edit</Link>
                 </td>
-                 <td>
+                <td>
                   <Link to={`/officemanage/${off._id}`}>Delete</Link>
                 </td>
               </tr>
@@ -52,5 +53,5 @@ const Offices = () => {
       </div>
     </div>
   );
-}
-  export default Offices;
+};
+export default Offices;
