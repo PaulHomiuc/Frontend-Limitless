@@ -142,9 +142,11 @@ function logOut() {
                 id="floornumber"
                 className="input"
                 type="number"
+                min="0"
                 placeholder="floor number"
                 value={floornumber}
                 required
+               
                 onChange={handleOnChange}
               />
             </label>
