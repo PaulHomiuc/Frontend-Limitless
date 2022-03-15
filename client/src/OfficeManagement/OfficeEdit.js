@@ -1,18 +1,25 @@
 import React, {useState, useEffect} from "react";
 import {Link} from "react-router-dom";
 import "./OfficeEdit.css";
+import {decodeJwt} from "jose";
 
 const getOffices = () => fetch("http://localhost:4000/api/offices").then((res) => res.json());
 
 const Offices = () => {
   const [items, setItems] = useState([]);
-
+  const token = localStorage.getItem("token");
+  const loggedIn = decodeJwt(token);
   useEffect(() => {
-    const fetchItems = async () => {
-      const offices = await getOffices();
-      setItems(offices);
-    };
-    fetchItems();
+    if (loggedIn.role === "admin") {
+      const fetchItems = async () => {
+        const offices = await getOffices();
+        setItems(offices);
+      };
+      fetchItems();
+    } else {
+      alert("This path requires admin permission please log in");
+      window.location.assign("http://localhost:3000/login");
+    }
   }, []);
   return (
     <div>
@@ -44,7 +51,7 @@ const Offices = () => {
                   <Link to={`/officemanage/${off._id}`}>Edit</Link>
                 </td>
                 <td>
-                  <Link to={`/officemanage/${off._id}`}>Delete</Link>
+                  <Link to={`/officemanage/delete/${off._id}`}>Delete</Link>
                 </td>
               </tr>
             ))}

@@ -1,4 +1,4 @@
-import React, {Component,useEffect} from "react";
+import React, {Component, useEffect} from "react";
 import "./OfficeManagement.css";
 import {useState} from "react";
 import {Navigate} from "react-router-dom";
@@ -12,7 +12,7 @@ export default function Register() {
   useEffect(() => {
     const fetchItems = async () => {
       const buildings = await getBuildings();
-      
+      TableSet();
       setItems(buildings);
     };
     fetchItems();
@@ -23,36 +23,31 @@ export default function Register() {
   const [bname, setLname] = useState("");
   const [usable, setRole] = useState("");
   const [offadm, setGender] = useState("");
-  
+
   const token = localStorage.getItem("token");
   const user = decodeJwt(token);
   const navigate = useNavigate();
   function redirect() {
     window.location.assign("http://localhost:3000/officemanage/edit");
   }
-  
-function logOut() {
-  localStorage.clear();
-  window.location.assign("http://localhost:3000/login");
-}
+
+  function logOut() {
+    localStorage.clear();
+    window.location.assign("http://localhost:3000/login");
+  }
   function FormSet() {
     var box1 = document.getElementById("Form1");
     var box2 = document.getElementById("table");
 
-
-      box2.style.display="none";
-      box1.style.display="block";
-    
+    box2.style.display = "none";
+    box1.style.display = "block";
   }
   function TableSet() {
     var box1 = document.getElementById("Form1");
     var box2 = document.getElementById("table");
 
-   
-      box1.style.display="none";
-      box2.style.display="block";
-    
-
+    box1.style.display = "none";
+    box2.style.display = "block";
   }
   async function registerOffice(event) {
     event.preventDefault();
@@ -70,10 +65,7 @@ function logOut() {
         offadm,
       }),
     });
-  
-  
 
-    
     const data = await response.json();
     console.log(data);
     if (data.status === "ok") navigate("/officemanage");
@@ -101,7 +93,6 @@ function logOut() {
           <button className="buttonOffice" onClick={TableSet}>
             Update Office
           </button>
-        
         </div>
         <div className="box1" id="Form1">
           <h1 className="headereg">Add a new Office</h1>
@@ -124,14 +115,14 @@ function logOut() {
               <p>
                 Building<b>*</b>
               </p>
-              <select className="Building-Select"  onChange={(e) => setLname(e.target.value)}>
-              <option disabled selected>Chose a building</option>
-            {items.map((bld) => (
-
-                <option className="Building-Selected">{bld.buildingName}</option>
-            
-            ))}
-            </select>
+              <select className="Building-Select" onChange={(e) => setLname(e.target.value)}>
+                <option disabled selected>
+                  Chose a building
+                </option>
+                {items.map((bld) => (
+                  <option className="Building-Selected">{bld.buildingName}</option>
+                ))}
+              </select>
             </label>
             <label>
               <p>
@@ -146,7 +137,6 @@ function logOut() {
                 placeholder="floor number"
                 value={floornumber}
                 required
-               
                 onChange={handleOnChange}
               />
             </label>
@@ -196,19 +186,18 @@ function logOut() {
                 Submit
               </button>
             </div>
-          
           </form>
         </div>
         <div className="TableOffices" id="table">
-        <Offices />
+          <Offices />
         </div>
         <div className="AccountOffices">
-            <label>{decodeJwt(token).email}</label>
-            <img className="roundedImg" src="user.png" alt="UserIcon"></img>
-            <button className="buttonOffice" onClick={logOut}>
-              Logout
-            </button>
-          </div>
+          <label>{decodeJwt(token).email}</label>
+          <img className="roundedImg" src="user.png" alt="UserIcon"></img>
+          <button className="buttonOffice" onClick={logOut}>
+            Logout
+          </button>
+        </div>
       </body>
     );
   } else {

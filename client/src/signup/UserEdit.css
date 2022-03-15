@@ -23,16 +23,16 @@
   top: 0;
   left: 10%;
 }
-.addUser{
+.addUser {
   position: absolute;
-  top:3%;
-  left:0;
+  top: 3%;
+  left: 0;
 }
-.btnAddUser{
+.btnAddUser {
   border-radius: 5px;
   font-family: "Fredoka";
   font-size: large;
-  background-color: rgba(105, 105, 105,0.9);
+  background-color: rgba(105, 105, 105, 0.9);
   color: rgb(252, 246, 246);
   padding: 9px;
 }
@@ -137,6 +137,10 @@ input:active {
 
 .hidden {
   display: none;
+}
+.percent {
+  text-align: center;
+  font-size: large;
 }
 input[type="checkbox"] {
   width: 20px;

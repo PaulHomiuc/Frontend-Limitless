@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from "react";
 import {Link} from "react-router-dom";
+import {decodeJwt} from "jose";
 import "./UserEdit.css";
-const getOffices = () => fetch("http://localhost:4000/api/users").then((res) => res.json());
-function redirectRegister(){
+const getUsers = () => fetch("http://localhost:4000/api/users").then((res) => res.json());
+function redirectRegister() {
   window.location.assign("http://localhost:3000/users");
-
 }
 export const deleteUser = (id) =>
   fetch(`http://localhost:4000/api/delete`, {
@@ -19,32 +19,34 @@ export const deleteUser = (id) =>
 
 export default function UserEdit() {
   const [items, setItems] = useState([]);
-  /*function deleteUser(id) {
-    const response = fetch("http://localhost:4000/api/delete", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(id),
-    });
-  }*/
+  const token = localStorage.getItem("token");
+  const loggedIn = decodeJwt(token);
   useEffect(() => {
-    const fetchItems = async () => {
-      const users = await getOffices();
-      setItems(users);
-    };
-    fetchItems();
+    if (loggedIn.role === "admin") {
+      const fetchItems = async () => {
+        const users = await getUsers();
+        setItems(users);
+      };
+      fetchItems();
+    } else {
+      alert("This path requires admin permission please log in");
+      window.location.assign("http://localhost:3000/login");
+    }
   }, []);
   useEffect(() => {
     const fetchItems = async () => {
-      const users = await getOffices();
+      const users = await getUsers();
       setItems(users);
     };
     fetchItems();
   }, [document.getElementById("table")]);
   return (
     <div className="AddBuilding">
-      <div className="addUser"><button className="btnAddUser" onClick={redirectRegister}>Add a new user</button></div>
+      <div className="addUser">
+        <button className="btnAddUser" onClick={redirectRegister}>
+          Add a new user
+        </button>
+      </div>
       <div>
         <h3>Users List</h3>
         <table id="table">
@@ -58,6 +60,7 @@ export default function UserEdit() {
               <th>Birth Date</th>
               <th>Nationality</th>
               <th>Activated</th>
+              <th>Remote work percentage</th>
               <th colspan="2">Action</th>
             </tr>
           </thead>
@@ -69,17 +72,18 @@ export default function UserEdit() {
                 <td>{user.email}</td>
                 <td>{user.role}</td>
                 <td>{user.gender}</td>
-                <td>{user.birthDate}</td>
+                <td>{user.birthDate.substring(0, 10)}</td>
                 <td>{user.nationality}</td>
+
                 <td>
                   <input type="checkbox" value={user.activated} checked={user.activated}></input>
                 </td>
-
+                <td className="percent">{user.remotePercent}%</td>
                 <td>
-                  <Link to={`/users/${user._id}`}>Edit</Link>
+                  <Link to={`/users${user._id}`}>Edit</Link>
                 </td>
                 <td>
-                  <Link to={`/users/${user._id}`}>Delete</Link>
+                  <Link to={`/users/deactivate/${user._id}`}>Activate/Deactivate</Link>
                 </td>
               </tr>
             ))}

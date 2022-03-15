@@ -40,7 +40,7 @@ export const UpdateUser = () => {
     });
   };
   useEffect(() => {
-    const fetchTodo = async () => {
+    const fetchUser = async () => {
       const user = await getUser(match.id);
       setUser(user);
       setEmail(user.email);
@@ -58,20 +58,19 @@ export const UpdateUser = () => {
       setDate(str);
       document.getElementById("date").value = str;
     };
-    fetchTodo();
+    fetchUser();
   }, []);
 
   async function onSubmit(d) {
     await updateUser(match);
     alert("User edited successfully");
-    
+
     window.location.assign("http://localhost:3000/users/edit");
   }
 
   return user ? (
     <div className="container">
       <div className="mt-3">
-       
         <div className="Register">
           <h1 className="headereg">Edit user</h1>
           <form className="formular">
