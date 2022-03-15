@@ -63,14 +63,15 @@ export const UpdateUser = () => {
 
   async function onSubmit(d) {
     await updateUser(match);
-
-    history.push("/");
+    alert("User edited successfully");
+    
+    window.location.assign("http://localhost:3000/users/edit");
   }
 
   return user ? (
     <div className="container">
       <div className="mt-3">
-        <h3>Edit Todo Item</h3>
+       
         <div className="Register">
           <h1 className="headereg">Edit user</h1>
           <form className="formular">

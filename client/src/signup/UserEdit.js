@@ -2,7 +2,10 @@ import React, {useState, useEffect} from "react";
 import {Link} from "react-router-dom";
 import "./UserEdit.css";
 const getOffices = () => fetch("http://localhost:4000/api/users").then((res) => res.json());
+function redirectRegister(){
+  window.location.assign("http://localhost:3000/users");
 
+}
 export const deleteUser = (id) =>
   fetch(`http://localhost:4000/api/delete`, {
     method: "POST",
@@ -41,6 +44,7 @@ export default function UserEdit() {
   }, [document.getElementById("table")]);
   return (
     <div className="AddBuilding">
+      <div className="addUser"><button className="btnAddUser" onClick={redirectRegister}>Add a new user</button></div>
       <div>
         <h3>Users List</h3>
         <table id="table">

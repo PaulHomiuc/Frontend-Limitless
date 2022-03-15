@@ -23,6 +23,19 @@
   top: 0;
   left: 10%;
 }
+.addUser{
+  position: absolute;
+  top:3%;
+  left:0;
+}
+.btnAddUser{
+  border-radius: 5px;
+  font-family: "Fredoka";
+  font-size: large;
+  background-color: rgba(105, 105, 105,0.9);
+  color: rgb(252, 246, 246);
+  padding: 9px;
+}
 
 .AddBuilding {
   /* The image used */
