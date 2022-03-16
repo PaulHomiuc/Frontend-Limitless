@@ -3,41 +3,17 @@ import "./Employee.css";
 import Table from "./DisplayTable";
 
 import {decodeJwt} from "jose";
-// const getOffices = () => fetch("http://localhost:4000/api/offices").then((res) => res.json());
+const getOffices = () => fetch("http://localhost:4000/api/offices").then((res) => res.json());
 function logOut() {
   localStorage.clear();
   window.location.assign("http://localhost:3000/login");
 }
 
-var officeName, building, floorNumber, totalDesks, usableDesks, officeAdmin;
-// async function fetchData() {
-//   const response = await fetch("http://localhost:4000/api/offices", {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify({
-//       officeName,
-//       building,
-//       floorNumber,
-//       totalDesks,
-//       usableDesks,
-//       officeAdmin,
-//     }),
-//   });
-
-//   const data = await response.json();
-// }
 function Employee() {
   const [items, setItems] = useState([]);
   const [percent, setPercent] = useState("");
-  useEffect(() => {
-    // const fetchItems = async () => {
-    //   const offices = await getOffices();
-    //   setItems(offices);
-    // };
-    // fetchItems();
-  }, []);
+
+  useEffect(() => {}, []);
   function FormToggle() {
     var box = document.getElementById("FormRequest");
     if (box.classList.contains("hidden")) {
@@ -64,7 +40,26 @@ function Employee() {
   const token = localStorage.getItem("token");
   console.log(token);
   const user = decodeJwt(token);
+  const sender = user.email;
+  const [reason, setReason] = useState();
+  const id = user.id;
+  function onSubmit() {
+    const response = fetch("http://localhost:4000/api/request", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        sender,
+        reason,
+        percent,
+        id,
+      }),
+    });
+    alert("Request sent successfully.");
 
+    window.location.assign("/employee");
+  }
   if (!token) {
     window.location.assign("http://localhost:3000/login");
   } else {
@@ -89,7 +84,7 @@ function Employee() {
             <h3>Remote work percentage</h3>
             <input
               type="range"
-              min="1"
+              min="0"
               max="100"
               value={percent}
               class="slider"
@@ -98,8 +93,15 @@ function Employee() {
             ></input>
             <label>{percent}%</label>
             <h3> Reason for request</h3>
-            <textarea className="Reason"></textarea>
-            <button className="buttonOffice">Submit request</button>
+            <textarea
+              id="freetext"
+              className="Reason"
+              value={reason}
+              onChange={(e) => setReason(e.target.value)}
+            ></textarea>
+            <button className="buttonOffice" onClick={onSubmit}>
+              Submit request
+            </button>
           </div>
           <div className="Account">
             <label>{decodeJwt(token).email}</label>
