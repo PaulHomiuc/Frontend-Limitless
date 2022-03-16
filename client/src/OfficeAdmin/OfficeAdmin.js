@@ -93,27 +93,27 @@ function OfficeAdmin() {
           </table>
         </div>
         <div className="DashboardOffice">
-          <label>You are logged in as Office Administrator</label>
+          <label className="dashboardTitle">You are logged in as Office Administrator</label>
           <div className="element1Office">
             <img className="InformationOffice" src="/deskIcon.png" alt="user profile"></img>
-            <button className="buttonMenuOffice">Office Management</button>
+            <button className="buttonOffice">Office Management</button>
           </div>
           <div className="element2Office">
             <img className="InformationOffice" src="writePage.png" alt="user profile"></img>
-            <button className="buttonMenuOffice" id="button1" onClick={register}>
+            <button className="buttonOffice" id="button1" onClick={register}>
               Add user
             </button>
           </div>
           <div className="element3Office">
             <img className="InformationOffice" src="/status-office.png" alt="user profile"></img>
-            <button className="buttonMenuOffice">Office Status</button>
+            <button className="buttonOffice">Office Status</button>
           </div>
         </div>
 
         <div className="AccountOffice">
           <label id="account">{decodeJwt(token).email}</label>
           <img className="roundedImgOffice" src="user.png" alt="UserIcon"></img>
-          <button className="btnOffice" onClick={logOut}>
+          <button className="btnLogout" onClick={logOut}>
             Logout
           </button>
         </div>

@@ -52,7 +52,7 @@ function Administrator() {
         <div className="Account">
           <label id="account">{decodeJwt(token).email}</label>
           <img className="roundedImg" src="user.png" alt="UserIcon"></img>
-          <button className="buttonOffice" onClick={logOut}>
+          <button className="btnLogout" onClick={logOut}>
             Logout
           </button>
         </div>

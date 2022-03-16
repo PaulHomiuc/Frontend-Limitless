@@ -18,7 +18,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  margin-right: -50px;
+  margin-right: -65px;
   font-family: "Fredoka";
 }
 .InformationOffice {
@@ -52,14 +52,7 @@
   height: 15%;
   width: 90%;
 }
-.buttonMenuOffice {
-  align-content: center;
-  display: block;
-  font-size: large;
-  padding: 1rem 1rem;
-  font-family: "Fredoka";
-  margin-left: 10%;
-}
+
 .btnOffice {
   background-color: rgb(118, 119, 122);
   color: rgb(255, 255, 255);
@@ -75,16 +68,15 @@
   text-align: center;
 }
 .DeskOffice {
-  position: relative;
-  margin-top: -2%;
-  margin-right: -15px;
-  margin-left: 23%;
+  position: absolute;
+  top:5%;
+  left: 30%;
   font-family: "Fredoka";
   padding: 5px;
   text-align: left;
   background: #075eaf;
   color: black;
-  font-size: 25px;
+  font-size:normal;
 }
 table1,
 th,

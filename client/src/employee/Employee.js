@@ -72,7 +72,7 @@ function Employee() {
       return (
         <body>
           <div className="DashboardEmployee">
-            <label className="buttonOffice">You are logged in as Employee</label>
+            <label className="dashboardTitle">You are logged in as Employee</label>
             <div className="element1">
               <img className="Information" src="/Information.png"></img>
               <button className="buttonOffice">Account information</button>
@@ -80,7 +80,7 @@ function Employee() {
             <div className="element2">
               <img className="Information" src="writePage.png"></img>
               <button className="buttonOffice" id="btnRequest" onClick={FormToggle}>
-                Desk request
+                Work Remote
               </button>
             </div>
           </div>
@@ -96,7 +96,7 @@ function Employee() {
               id="myRange"
               onChange={(e) => setPercent(e.target.value)}
             ></input>
-
+            <label>{percent}%</label>
             <h3> Reason for request</h3>
             <textarea className="Reason"></textarea>
             <button className="buttonOffice">Submit request</button>
@@ -104,7 +104,7 @@ function Employee() {
           <div className="Account">
             <label>{decodeJwt(token).email}</label>
             <img className="roundedImg" src="user.png" alt="UserIcon"></img>
-            <button className="buttonOffice" onClick={logOut}>
+            <button className="btnLogout" onClick={logOut}>
               Logout
             </button>
           </div>
