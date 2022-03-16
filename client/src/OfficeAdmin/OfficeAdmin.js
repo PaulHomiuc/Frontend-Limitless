@@ -96,7 +96,7 @@ function OfficeAdmin() {
           <label className="dashboardTitle">You are logged in as Office Administrator</label>
           <div className="element1Office">
             <img className="InformationOffice" src="/deskIcon.png" alt="user profile"></img>
-            <button className="buttonOffice">Office Management</button>
+            <button className="btnOffice">Office Management</button>
           </div>
           <div className="element2Office">
             <img className="InformationOffice" src="writePage.png" alt="user profile"></img>

@@ -29,10 +29,10 @@ function Administrator() {
     return (
       <body>
         <div className="Dashboard">
-          <label className="lblAdmin">You are logged in as Administrator</label>
+          <label className="dashboardTitle">You are logged in as Administrator</label>
           <div className="element1">
             <img className="Information" src="/deskIcon.png" alt="user profile"></img>
-            <button className="buttonOffice" onClick={officeManagement}>
+            <button className="btnOffice" onClick={officeManagement}>
               Office Management
             </button>
           </div>
@@ -44,8 +44,14 @@ function Administrator() {
           </div>
           <div className="element2">
             <img className="Information" src="building-icon.png" alt="building icon"></img>
-            <button className="buttonOffice" id="button1" onClick={buildingsManagement}>
+            <button className="buttonOffice" id="button2" onClick={buildingsManagement}>
               Buildings Management
+            </button>
+          </div>
+          <div className="element2">
+            <img className="Information" src="work-from-home.png" alt="remote work icon"></img>
+            <button className="buttonOffice" id="button3" onClick={buildingsManagement}>
+              Remote work requests
             </button>
           </div>
         </div>

@@ -1,11 +1,11 @@
 .DashboardOffice {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   background-color: rgb(38, 136, 228);
   width: 400px;
   height: 1080px;
-  margin: -10px;
+  margin: -15px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -54,10 +54,22 @@
 }
 
 .btnOffice {
-  background-color: rgb(118, 119, 122);
-  color: rgb(255, 255, 255);
-  font-size: large;
-  font-family: "Fredoka";
+  display: inline-block;
+  padding: 10px 10px;
+  font-size: 18px;
+  cursor: pointer;
+  text-align: center;
+
+  text-decoration: none;
+  margin-left: 23%;
+  margin-top: 15%;
+  outline: none;
+  color: rgb(2, 0, 0);
+  background-color: #f8e7e7;
+  border: none;
+  font-family: "Fredoka", cursive;
+  border-radius: 15px;
+  box-shadow: 0 3px #999;
 }
 .roundedImgOffice {
   border-radius: 50%;
