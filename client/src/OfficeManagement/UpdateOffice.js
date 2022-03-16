@@ -57,7 +57,10 @@ export const UpdateOffice = () => {
 
     window.location.assign("http://localhost:3000/officemanage");
   }
-
+  function onUsable() {
+    if (document.getElementById("usable").value >= document.getElementById("totaldesks").value)
+      setUsable(totaldesks);
+  }
   return office ? (
     <body className="Office-wrapper">
       <div className="box1" id="Form1">
@@ -107,6 +110,7 @@ export const UpdateOffice = () => {
               placeholder="floor number"
               value={floorNumber}
               required
+              onChange={(e) => setNumber(e.target.value)}
             />
           </label>
           <label>
@@ -118,7 +122,7 @@ export const UpdateOffice = () => {
               type="number"
               placeholder="Total Desks"
               required
-              min="0"
+              min={usabledesks}
               value={totaldesks}
               onChange={(e) => setTotal(e.target.value)}
             />
@@ -137,6 +141,7 @@ export const UpdateOffice = () => {
               value={usabledesks}
               min="0"
               onChange={(e) => setUsable(e.target.value)}
+              onInput={onUsable}
             />
           </label>
           <label>

@@ -16,6 +16,7 @@ import NOTFOUND from "./NOTFOUND.js";
 import BuildingAdd from "./buildings/BuildingAdd";
 import {UpdateOffice} from "./OfficeManagement/UpdateOffice";
 import DeleteOffice from "./OfficeManagement/DeleteOffice";
+import OfficeAdminEdit from "./OfficeAdmin/OfficeAdminEdit";
 const App = () => {
   return (
     <div className="bg">
@@ -26,7 +27,7 @@ const App = () => {
           <Route exact path="/employee" element={<Employee />} />
           <Route exact path="/admin" element={<Administrator />} />
           <Route exact path="/officeadmin" element={<OfficeAdmin />} />
-
+          <Route path="/officeadmin/:email" element={<OfficeAdminEdit />} />
           <Route exact path="/preferences" element={<Preferences />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/users" element={<Register />} />
