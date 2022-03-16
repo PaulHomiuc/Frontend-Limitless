@@ -68,3 +68,18 @@
 
   margin-left: 10%;
 }
+.tableRequests {
+  position: absolute;
+  top: 15%;
+  left: 30%;
+  padding: 9px;
+}
+.tableRequestsHeader {
+  background-color: rgb(95, 95, 95);
+  color: white;
+  padding: 0.5em 1em;
+  border-color: rgb(0, 0, 0);
+
+  text-decoration: none;
+  text-transform: uppercase;
+}

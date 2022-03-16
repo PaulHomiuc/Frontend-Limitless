@@ -145,12 +145,12 @@ export default function Register() {
               name="gender"
               id="genders"
               required
-              placeholder="Male"
+              placeholder="Chose"
               value={gender}
               onChange={(e) => setGender(e.target.value)}
             >
-              {" "}
-              <option selected disabled>
+         
+              <option selected disabled >
                 Choose gender...
               </option>
               <option value="Male">Male</option>

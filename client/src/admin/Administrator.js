@@ -65,8 +65,8 @@ function Administrator() {
         </div>
         <div>
           <h3>Requests Works List</h3>
-          <table className="tableUsers">
-            <thead className="tableHeader">
+          <table className="tableRequests">
+            <thead className="tableRequestsHeader">
               <tr>
                 <th>Sender</th>
                 <th>Reason</th>
@@ -92,7 +92,6 @@ function Administrator() {
             </tbody>
           </table>
         </div>
-
         <div className="Account">
           <label id="account">{decodeJwt(token).email}</label>
           <img className="roundedImg" src="user.png" alt="UserIcon"></img>
