@@ -26,7 +26,7 @@
 .addUser {
   position: absolute;
   top: 3%;
-  left: 0;
+  left:3.5%;
 }
 .btnAddUser {
   border-radius: 5px;
@@ -35,6 +35,25 @@
   background-color: rgba(105, 105, 105, 0.9);
   color: rgb(252, 246, 246);
   padding: 9px;
+}
+.tableUsers{
+  position: absolute;
+  top: 15%;
+  left: 3%;
+  padding: 9px;
+}
+.tableHeader{
+  background-color: rgb(95, 95, 95);
+  color: white;
+  padding: 0.5em 1em;
+  border-color: rgb(0, 0, 0);
+  
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.birthdate{
+  min-width: 100px;
+
 }
 
 .AddBuilding {

@@ -48,20 +48,20 @@ export default function UserEdit() {
         </button>
       </div>
       <div>
-        <h3>Users List</h3>
-        <table id="table">
+        <h1>Users List</h1>
+        <table id="table" className="tableUsers">
           <thead>
             <tr>
-              <th>First name</th>
-              <th>Last name</th>
-              <th>E-mail</th>
-              <th>Role</th>
-              <th>Gender</th>
-              <th>Birth Date</th>
-              <th>Nationality</th>
-              <th>Activated</th>
-              <th>Remote work percentage</th>
-              <th colspan="2">Action</th>
+              <th className="tableHeader">First name</th>
+              <th className="tableHeader">Last name</th>
+              <th className="tableHeader">E-mail</th>
+              <th className="tableHeader">Role</th>
+              <th className="tableHeader">Gender</th>
+              <th  className="tableHeader">Birth Date</th>
+              <th className="tableHeader">Nationality</th>
+              <th className="tableHeader">Activated</th>
+              <th className="tableHeader">Remote work percentage</th>
+              <th colspan="2" className="tableHeader">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -72,17 +72,17 @@ export default function UserEdit() {
                 <td>{user.email}</td>
                 <td>{user.role}</td>
                 <td>{user.gender}</td>
-                <td>{user.birthDate.substring(0, 10)}</td>
+                <td className="birthdate">{user.birthDate.substring(0, 10)}</td>
                 <td>{user.nationality}</td>
 
                 <td>
                   <input type="checkbox" value={user.activated} checked={user.activated}></input>
                 </td>
                 <td className="percent">{user.remotePercent}%</td>
-                <td>
+                <td >
                   <Link to={`/users${user._id}`}>Edit</Link>
                 </td>
-                <td>
+                <td >
                   <Link to={`/users/deactivate/${user._id}`}>Activate/Deactivate</Link>
                 </td>
               </tr>
