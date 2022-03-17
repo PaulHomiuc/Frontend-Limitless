@@ -1,12 +1,13 @@
 import "./OfficeAdmin.css";
 import {decodeJwt} from "jose";
 import React, {useEffect, useState} from "react";
-import {useParams, Link} from "react-router-dom";
+import {useParams,useNavigate, Link} from "react-router-dom";
 
 function logOut() {
   localStorage.clear();
   window.location.assign("/login");
 }
+
 
 function register() {
   window.location.assign("/users");
@@ -30,7 +31,11 @@ function OfficeAdmin() {
   console.log(token);
   const user = decodeJwt(token);
   const email = user.email;
-
+  const history=useNavigate();
+  function redirect() {
+  
+    history(`/userstatus/`);
+  }
   useEffect(() => {
     if (user.role === "officeadmin") {
       const fetchItems = async () => {
@@ -101,7 +106,7 @@ function OfficeAdmin() {
          
           <div className="element3Office">
             <img className="InformationOffice" src="/status-office.png" alt="user profile"></img>
-            <button className="buttonOffice">Office Status</button>
+            <button className="buttonOffice" onClick={redirect}>Office Status</button>
           </div>
         </div>
 

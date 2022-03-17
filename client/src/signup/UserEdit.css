@@ -42,14 +42,34 @@
   left: 3%;
   padding: 9px;
 }
+
 .tableHeader{
   background-color: rgb(95, 95, 95);
   color: white;
   padding: 0.5em 1em;
   border-color: rgb(0, 0, 0);
-  
+  font-family: "Fredoka";
   text-decoration: none;
   text-transform: uppercase;
+}
+.tableElements{
+
+  font-family: "Fredoka";
+}
+.TableTitle{
+  position: absolute;
+  top: 0%;
+  left: 45%;
+}
+.tableUsersStat{
+  position: absolute;
+  top: 10%;
+  left: 35%;
+}
+.UserStatusTable{
+  position: absolute;
+  top:10%;
+  left: 40%;
 }
 .birthdate{
   min-width: 100px;
@@ -160,6 +180,7 @@ input:active {
 .percent {
   text-align: center;
   font-size: large;
+  font-family: "Fredoka";
 }
 input[type="checkbox"] {
   width: 20px;
