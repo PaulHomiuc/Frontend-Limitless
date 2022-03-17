@@ -19,6 +19,7 @@ import DeleteOffice from "./OfficeManagement/DeleteOffice";
 import OfficeAdminEdit from "./OfficeAdmin/OfficeAdminEdit";
 import RequestAccept from "./admin/RequestAccept";
 import RequestDecline from "./admin/RequestDecline";
+import UserStatus from "./signup/UserStatus";
 const App = () => {
   return (
     <div className="bg">
@@ -36,6 +37,7 @@ const App = () => {
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/users" element={<Register />} />
           <Route exact path="/users/edit" element={<UserEdit />} />
+          <Route exact path="/userstatus" element={<UserStatus />} />
           <Route path="/users/:id" element={<UpdateUser />} />
           <Route path="/users/deactivate/:id" element={<DeactivateUser />} />
           <Route exact path="/officemanage" element={<OfficeManagement />} />

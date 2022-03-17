@@ -1,6 +1,7 @@
 import React, {Component, useEffect, useState} from "react";
 import "./Employee.css";
 import Table from "./DisplayTable";
+import {useNavigate, Link} from "react-router-dom";
 
 import {decodeJwt} from "jose";
 const getOffices = () => fetch("http://localhost:4000/api/offices").then((res) => res.json());
@@ -12,7 +13,7 @@ function logOut() {
 function Employee() {
   const [items, setItems] = useState([]);
   const [percent, setPercent] = useState("");
-
+  const history = useNavigate();
   useEffect(() => {}, []);
   function FormToggle() {
     var box = document.getElementById("FormRequest");
@@ -43,6 +44,9 @@ function Employee() {
   const sender = user.email;
   const [reason, setReason] = useState();
   const id = user.id;
+  function redirect() {
+    history(`/userstatus/`);
+  }
   function onSubmit() {
     const response = fetch("http://localhost:4000/api/request", {
       method: "POST",
@@ -70,7 +74,9 @@ function Employee() {
             <label className="dashboardTitle">You are logged in as Employee</label>
             <div className="element1">
               <img className="Information" src="/Information.png"></img>
-              <button className="buttonOffice">Account information</button>
+              <button className="buttonOffice" onClick={redirect}>
+                UserStatus
+              </button>
             </div>
             <div className="element2">
               <img className="Information" src="writePage.png"></img>
