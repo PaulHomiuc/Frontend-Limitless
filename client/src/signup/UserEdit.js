@@ -6,6 +6,10 @@ const getUsers = () => fetch("http://localhost:4000/api/users").then((res) => re
 function redirectRegister() {
   window.location.assign("http://localhost:3000/users");
 }
+function logOut() {
+  localStorage.clear();
+  window.location.assign("http://localhost:3000/login");
+}
 export const deleteUser = (id) =>
   fetch(`http://localhost:4000/api/delete`, {
     method: "POST",
@@ -47,6 +51,12 @@ export default function UserEdit() {
           Add a new user
         </button>
       </div>
+      <div className="AccountOffices">
+          <label>{decodeJwt(token).email}</label>
+          <img className="roundedImg" src="user.png" alt="UserIcon"></img>
+          <button className="btnLogout" onClick={logOut}>
+            Logout
+          </button></div>
       <div>
         <h1>Users List</h1>
         <table id="table" className="tableUsers">
@@ -80,7 +90,7 @@ export default function UserEdit() {
                 </td>
                 <td className="percent">{user.remotePercent}%</td>
                 <td >
-                  <Link to={`/users${user._id}`}>Edit</Link>
+                  <Link to={`/users/${user._id}`}>Edit</Link>
                 </td>
                 <td >
                   <Link to={`/users/deactivate/${user._id}`}>Activate/Deactivate</Link>

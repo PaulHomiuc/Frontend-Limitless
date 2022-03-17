@@ -113,6 +113,7 @@ function Employee() {
         </body>
       );
     else {
+      alert("user is deactivated");
       window.location.assign("http://localhost:3000/login");
     }
   }

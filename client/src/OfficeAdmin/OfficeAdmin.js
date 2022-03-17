@@ -98,12 +98,7 @@ function OfficeAdmin() {
             <img className="InformationOffice" src="/deskIcon.png" alt="user profile"></img>
             <button className="btnOffice">Office Management</button>
           </div>
-          <div className="element2Office">
-            <img className="InformationOffice" src="writePage.png" alt="user profile"></img>
-            <button className="buttonOffice" id="button1" onClick={register}>
-              Add user
-            </button>
-          </div>
+         
           <div className="element3Office">
             <img className="InformationOffice" src="/status-office.png" alt="user profile"></img>
             <button className="buttonOffice">Office Status</button>
@@ -120,6 +115,7 @@ function OfficeAdmin() {
       </body>
     );
   else {
+    console.log("user is deactivated");
     window.location.assign("/login");
   }
 }

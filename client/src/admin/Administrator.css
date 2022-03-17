@@ -71,6 +71,7 @@
 .tableRequests {
   position: absolute;
   top: 15%;
+  font-family: "Fredoka";
   left: 30%;
   padding: 9px;
 }
@@ -79,7 +80,14 @@
   color: white;
   padding: 0.5em 1em;
   border-color: rgb(0, 0, 0);
-
+font-family: "Fredoka";
   text-decoration: none;
   text-transform: uppercase;
+}
+.Confirm{
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  transform: scale(3,3 );
+
 }
